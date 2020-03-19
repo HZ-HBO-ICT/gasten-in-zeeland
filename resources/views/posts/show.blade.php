@@ -1,4 +1,4 @@
-@extends('common.master')
+@extends('common.page')
 
 @section('content')
     <section class="hero  is-large  is-bold is-primary"  style="background: url('{{$post->img_url}}') no-repeat center center; background-size: cover;" >

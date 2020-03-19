@@ -1,4 +1,4 @@
-@extends('common.master')
+@extends('common.page')
 
 @section('content')
     <section class="hero  is-medium  is-bold is-primary">
