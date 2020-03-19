@@ -1,14 +1,13 @@
 ![Logo of the project](https://avatars3.githubusercontent.com/u/40756580?s=200&v=4)
 
-# Project-name
+# Gasten in Zeeland (Guests in Zeeland)
 
-One liner project description here.
+Gathers data from accomodations in Zeeland for monitoring during COVID-19 crisis.
 
 ## Features
 
-What's all the bells and whistles this project can perform?
-* Manage Matches, results an rankings
-* Set your currently binging genres
+* Accomodation managers can add guest count on a daily basis
+* Data can be downloaded for local analysis
 
 ## Developing
 
