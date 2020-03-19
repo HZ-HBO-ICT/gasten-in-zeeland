@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Language Lines
@@ -13,10 +12,9 @@ return [
     |
     */
 
-    'name' => 'Name',
-    'lodging_name' => 'Lodging Name',
-    'email' => "E-Mail adress",
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    'name' => 'Naam',
+    'lodging_name' => 'Accomodatie naam',
+    'email' => "E-Mail adres",
+    'failed'   => 'Deze combinatie van e-mailadres en wachtwoord is niet geldig.',
+    'throttle' => 'Te veel mislukte loginpogingen. Probeer het over :seconds seconden nogmaals.',
 ];

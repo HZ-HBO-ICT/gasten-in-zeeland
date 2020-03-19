@@ -21,5 +21,11 @@ Route::get('/', function () {
     return view('welcome', compact('latestPosts'));
 });
 
+
+
 // Resource routes of the base pages. For more info on Resource Routes
 Route::resource('/posts', 'PostController');
+
+Auth::routes(['verify' => true]);
+
+Route::get('/home', 'HomeController@index')->name('home');
