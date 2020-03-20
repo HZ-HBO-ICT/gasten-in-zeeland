@@ -21,6 +21,9 @@
                     Nieuws
                 </a>
             </div>
+            <div class="navbar-end">
+                <x-user></x-user>
+            </div>
         </div>
     </div>
 </nav>

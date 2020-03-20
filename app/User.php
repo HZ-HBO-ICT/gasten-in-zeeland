@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -16,7 +17,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'lodging_name', 'lodging_max', 'email', 'password',
     ];
 
     /**
@@ -36,4 +37,27 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function statuses()
+    {
+        return $this->hasMany('App\Status');
+    }
+
+    /**
+     * Returns true if the user is allowed to add a new statuses. This is controlled by a timout
+     *
+     * @return bool
+     * @noinspection PhpUnused
+     */
+    public function getCanAddNewStatusAttribute()
+    {
+        return $this->statuses()->count()==0 ||
+            Carbon::now()->diffInDays($this->last_status_update) > env('TIMEOUT_INTERVAL_DAYS', 1);
+    }
+
+    public function getLastStatusUpdateAttribute()
+    {
+        return $this->statuses()->max('created_at');
+    }
 }

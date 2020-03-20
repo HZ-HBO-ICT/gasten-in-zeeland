@@ -47,7 +47,25 @@
                                 <p class="help is-danger">{{ $message }}</p>
                                 @enderror
                             </div>
-
+                            <div class="field">
+                                <label for="lodging_max" class="label">{{ __('auth.lodging_max') }}</label>
+                                <div class="control has-icons-left has-icons-right">
+                                    <input type="text" name="lodging_max" placeholder="{{ __('auth.lodging_max_placeholder') }}"
+                                           class="input @error('lodging_max') is-danger @enderror"
+                                           value="{{ old('lodging_max') }}" required autocomplete="lodging_max" autofocus>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-bed"></i>
+                                    </span>
+                                    @error('lodging_max')
+                                    <span class="icon is-small is-right">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </span>
+                                    @enderror
+                                </div>
+                                @error('lodging_max')
+                                <p class="help is-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
                             <div class="field">
                                 <label for="email" class="label">{{ __('auth.email') }}</label>
                                 <div class="control has-icons-left has-icons-right">

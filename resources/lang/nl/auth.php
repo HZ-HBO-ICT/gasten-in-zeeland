@@ -14,6 +14,7 @@ return [
 
     'name' => 'Naam',
     'lodging_name' => 'Accomodatie naam',
+    'lodging_max' => 'Maximaal aantal gasten in de accomodatie',
     'email' => "E-Mail adres",
     'failed'   => 'Deze combinatie van e-mailadres en wachtwoord is niet geldig.',
     'throttle' => 'Te veel mislukte loginpogingen. Probeer het over :seconds seconden nogmaals.',

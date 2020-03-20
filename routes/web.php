@@ -25,6 +25,7 @@ Route::get('/', function () {
 
 // Resource routes of the base pages. For more info on Resource Routes
 Route::resource('/posts', 'PostController');
+Route::resource('/statuses', 'StatusController');
 
 Auth::routes(['verify' => true]);
 

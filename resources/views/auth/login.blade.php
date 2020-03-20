@@ -30,7 +30,7 @@
                             </div>
                             <div class="field">
                                 <label for="password" class="label">{{ __('Password') }}</label>
-                                <div class="control has-icons-left">
+                                <div class="control has-icons-left has-icons-right">
                                     <input id="password" type="password"
                                            class="input @error('password') is-danger @enderror"
                                            name="password" required autocomplete="current-password"/>
@@ -41,10 +41,11 @@
                                     <span class="icon is-small is-right">
                                         <i class="fas fa-exclamation-triangle"></i>
                                     </span>
-                                    @error('password')
-                                    <p class="help is-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
+                                @error('password')
+                                <p class="help is-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="field">
                                 <label for="" class="checkbox">
