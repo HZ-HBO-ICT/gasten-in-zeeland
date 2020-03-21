@@ -1,109 +1,60 @@
-@extends('common.page')
+@extends('common.master')
 
-@section('content')
-    <section class="hero  is-medium  is-bold is-primary">
-        <div class="hero-body" style="
-            background: url('https://www.hz.nl/imager/uploads/images/3.-Werk-en-studie/Headers/docent-coacht-studenten-003_c8fa470484be7b69be5daae77a1602c5.jpg') no-repeat center center;
-            background-size: cover;"
-        ></div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-
-                <div class="column is-8-desktop is-12-tablet">
-
-                    <div class="content">
-                        <h1>Welkom op de website van de HZ.</h1>
-                        <p>
-                            Posuere porttitor natoque velit duis penatibus fermentum dignissim ut? Vel vel mi purus
-                            tempor nec conubia platea venenatis. Mauris pharetra auctor magnis, vehicula integer risus
-                            taciti gravida semper fames! Eu fermentum lorem accumsan litora. Consequat dapibus interdum
-                            primis lorem. Convallis integer mi suscipit tempor. Ad tincidunt placerat at. Sagittis
-                            pulvinar consectetur commodo, placerat varius sociosqu egestas felis! Curae; dictumst porta
-                            tempus. Nisi nec morbi netus euismod egestas proin sed tempor. Nam feugiat ante ante.
-                            Conubia vehicula tincidunt facilisis quisque risus senectus convallis. Eget at feugiat vel
-                            nisi. Tortor, facilisis neque elementum ultricies blandit amet orci dictumst eu mi molestie.
-                            Libero vulputate porta proin volutpat suspendisse aenean aenean facilisi ut primis!
-                            Venenatis elementum auctor neque urna et facilisis vulputate erat lorem habitasse libero!
-                            Risus ornare quam rutrum praesent blandit congue aliquet mauris.
-                        </p>
-                        <p>
-                            Elementum orci eget vel adipiscing tempor malesuada? Sollicitudin euismod nunc feugiat
-                            accumsan accumsan condimentum nulla pellentesque sagittis habitasse suspendisse praesent?
-                            Lectus proin justo vulputate tristique duis metus, est pellentesque blandit quam pharetra.
-                            Maecenas tincidunt litora mauris mollis ornare dictum nec placerat lectus massa lobortis
-                            auctor. Hac feugiat dolor, ac ridiculus mi adipiscing aptent elementum suspendisse augue
-                            rutrum! Habitasse a consequat ornare dictumst integer dis porta.
-                        </p>
-                        <p>
-                            Blandit mollis felis gravida sem ad venenatis ut a lacus! Magna odio netus, torquent rhoncus
-                            fames velit. Adipiscing libero, class cursus ipsum penatibus enim mollis netus. Sociis
-                            luctus eros sapien platea parturient fringilla. Senectus purus tincidunt laoreet purus
-                            praesent. Accumsan pulvinar tincidunt gravida malesuada senectus proin, elit cubilia
-                            lobortis quisque tellus? Torquent dis natoque sapien natoque sagittis conubia pulvinar risus
-                            elementum hac adipiscing arcu. Sem nisl fusce phasellus adipiscing pretium eget hendrerit
-                            proin non. Vestibulum lacus magna, commodo volutpat.
-                        </p>
-                        <p>
-                            Vivamus ridiculus amet arcu. Magnis venenatis vehicula venenatis molestie molestie proin sed
-                            blandit, inceptos volutpat. Auctor auctor massa sodales ipsum. Congue est quisque porta?
-                            Porta phasellus sem torquent ad feugiat sollicitudin nisi tempor tortor habitasse. Eros
-                            condimentum enim blandit pulvinar. Justo aenean, taciti curae; diam volutpat cubilia ante
-                            vestibulum. Augue penatibus phasellus inceptos tortor convallis ridiculus at ad. Nisl
-                            curabitur vel gravida, montes sit velit pellentesque. Sem, dapibus maecenas urna lectus
-                            mauris quisque nibh accumsan amet curabitur egestas dolor. Sagittis montes magnis quam
-                            fringilla accumsan bibendum. Nisl, a laoreet himenaeos sapien lorem quisque taciti lacus
-                            elit mauris. Mollis eleifend montes commodo? Accumsan nullam venenatis malesuada netus metus
-                            sociosqu magnis velit. Rhoncus lacus tempus praesent fermentum netus ullamcorper dolor
-                            integer nulla.
-                        </p>
-                        <p>
-                            Habitasse suspendisse egestas vestibulum pellentesque per leo enim metus donec ad. Hac metus
-                            convallis nibh eget, parturient dis elementum posuere. Felis, ultricies fusce est cubilia
-                            facilisis odio id velit dapibus suspendisse. Erat praesent nullam aliquam. Rutrum commodo
-                            eget malesuada per montes, curae; senectus convallis sociis per. Risus mattis justo vivamus
-                            lorem bibendum aenean eleifend facilisi, suscipit consectetur libero litora. Interdum?
-                        </p>
+@section('body')
+    <section class="hero is-primary is-bold is-fullheight">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a href="/" class="navbar-item">
+                            <strong><i class="fas fa-bed"></i> GiZ</strong>
+                        </a>
+                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <span class="navbar-item">
+                                <a class="button is-primary is-inverted" href="/login">
+                                    {{ __('app.login') }}
+                                </a>
+                            </span>
+                        </div>
                     </div>
                 </div>
+            </nav>
+        </div>
 
-                <div class="column is-4-desktop is-12-tablet">
-                    <p class="title is-4">Nieuw(s) Online</p>
-
-                    <div class="columns is-multiline">
-
-                        @foreach($latestPosts as $post)
-                            <div class="column is-12">
-                                <div class="card">
-
-                                    <div class="card-image">
-                                        <img src="{{$post->img_url}}" alt="Post picture">
-                                    </div>
-
-                                    <div class="card-content">
-                                        <div class="content">
-
-                                            <a class="title is-4" href="/posts/{{$post->id}}">{{$post->title}}</a>
-
-                                            <p>{{$post->excerpt}}</p>
-                                        </div>
-                                        <div class="has-text-centered">
-                                            <a href="/posts/{{$post->id}}" class="button is-primary">Lees meer...</a>
-                                        </div>
-                                    </div>
-                                    <footer class="card-footer">
-                                        <p class="card-footer-item">Gepubliceerd: {{ $post->published_at }}</p>
-                                    </footer>
-                                </div>
-                            </div>
-                        @endforeach
-
-                    </div>
-
-                </div>
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                    Gasten in Zeeland
+                </h1>
+                <h2 class="subtitle">
+                    Monitoren van aanwezige gasten in de provincie
+                </h2>
+                <a class="button is-success" href="/register">
+                    {{ __('app.register') }}
+                </a>
             </div>
+        </div>
+
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-foot">
+            <nav class="tabs">
+                <div class="container">
+                    <ul>
+                        <li><a href="https://www.csrhymes.com">Theme built by C.S. Rhymes</a>
+                        </li>
+                        <li><a href="https://github.com/dwaard">Adapted by BugSlayer</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
     </section>
 @endsection

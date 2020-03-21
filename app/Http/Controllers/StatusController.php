@@ -9,6 +9,16 @@ use Illuminate\Support\Facades\Auth;
 class StatusController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -36,7 +46,6 @@ class StatusController extends Controller
      */
     public function store(Request $request)
     {
-        //validat input
         $data = $request->validate([
             'count' => 'required|integer|min:0'
         ]);

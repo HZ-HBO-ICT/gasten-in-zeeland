@@ -15,16 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // Take the 3 newest posts
-    $latestPosts = Post::orderBy('published_at', 'desc')->take(3)->get();
-
-    return view('welcome', compact('latestPosts'));
+    return view('welcome');
 });
 
 
 
 // Resource routes of the base pages. For more info on Resource Routes
-Route::resource('/posts', 'PostController');
 Route::resource('/statuses', 'StatusController');
 
 Auth::routes(['verify' => true]);

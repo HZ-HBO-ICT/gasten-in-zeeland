@@ -56,6 +56,12 @@ class User extends Authenticatable implements MustVerifyEmail
             Carbon::now()->diffInDays($this->last_status_update) > env('TIMEOUT_INTERVAL_DAYS', 1);
     }
 
+    /**
+     * Returns the max created_at value of the users statuses
+     *
+     * @return mixed
+     * @noinspection PhpUnused
+     */
     public function getLastStatusUpdateAttribute()
     {
         return $this->statuses()->max('created_at');
