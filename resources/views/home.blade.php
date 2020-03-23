@@ -16,17 +16,13 @@
 
                     <div class="content">
                         <h1>Welkom op de website van Gasten in Zeeland.</h1>
-                        @if(Auth::user()->can_add_new_status)
-                            @include('statuses.create_form')
-                        @else
-                            <div class="notification is-warning">
-                                <button class="delete"></button>
-                                {{ __('app.timeout_not_reached') }}
-                            </div>
-                        @endif
+                        @include('common.notifications')
+                        @include('statuses.create_form')
                         <h2></h2>
                         @if(Auth::user()->statuses()->count() > 0)
-                            @include('statuses.index_table', ['statuses' => Auth::user()->statuses])
+                            @include('statuses.index_table', [
+                                'statuses' => Auth::user()->statuses()->orderBy('measured_at', 'desc')->get()
+                            ])
                         @endif
                     </div>
                 </div>

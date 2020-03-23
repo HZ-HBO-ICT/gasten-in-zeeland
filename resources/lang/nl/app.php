@@ -15,6 +15,7 @@ return [
     'statuses.new' => 'Nieuwe status toevoegen',
     'statuses.count'=> 'Aantal gasten',
     'statuses.count_placeholder'=> 'Huidig aantal gasten binnen uw verblijf',
+    'statuses.create.success'=> 'Status update is opgeslagen',
 
     'form.save' => "Opslaan",
     'form.reset' => 'Reset',

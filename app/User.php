@@ -39,31 +39,14 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
 
+    /**
+     * The statuses associated with this user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function statuses()
     {
         return $this->hasMany('App\Status');
     }
 
-    /**
-     * Returns true if the user is allowed to add a new statuses. This is controlled by a timout
-     *
-     * @return bool
-     * @noinspection PhpUnused
-     */
-    public function getCanAddNewStatusAttribute()
-    {
-        return $this->statuses()->count()==0 ||
-            Carbon::now()->diffInDays($this->last_status_update) > env('TIMEOUT_INTERVAL_DAYS', 1);
-    }
-
-    /**
-     * Returns the max created_at value of the users statuses
-     *
-     * @return mixed
-     * @noinspection PhpUnused
-     */
-    public function getLastStatusUpdateAttribute()
-    {
-        return $this->statuses()->max('created_at');
-    }
 }

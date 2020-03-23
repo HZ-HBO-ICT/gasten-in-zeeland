@@ -123,12 +123,18 @@
                                 <p class="help is-danger">{{ $message }}</p>
                                 @enderror
                             </div>
-                            <div class="field">
-                                <button class="button is-success">
-                                    {{ __('Register') }}
-                                </button>
+                            <div class="field is-grouped">
+                                {{-- Here are the form buttons: save, reset and cancel --}}
+                                <div class="control">
+                                    <button type="submit" class="button is-primary">{{ __('Register') }}</button>
+                                </div>
+                                <div class="control">
+                                    <button type="reset" class="button is-warning">{{ __('app.form.reset') }}</button>
+                                </div>
+                                <div class="control">
+                                    <a type="button" href="/" class="button is-light">{{ __('app.form.cancel') }}</a>
+                                </div>
                             </div>
-
                         </form>
                     </div>
                 </div>

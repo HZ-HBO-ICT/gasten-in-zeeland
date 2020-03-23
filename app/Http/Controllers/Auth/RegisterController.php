@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/email/verify';
 
     /**
      * Create a new controller instance.
@@ -73,5 +73,6 @@ class RegisterController extends Controller
             'lodging_max' => $data['lodging_max'],
             'password' => Hash::make($data['password']),
         ]);
+        session()->flash('success', __('auth.register.email_sent'));
     }
 }

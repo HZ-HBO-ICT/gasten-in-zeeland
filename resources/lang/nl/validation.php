@@ -126,8 +126,8 @@ return [
     |
     */
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'measured_at' => [
+            'unique' => 'Er is al een meting voor deze :attribute ingevoerd',
         ],
     ],
     /*
@@ -182,5 +182,6 @@ return [
         'title'                 => 'titel',
         'username'              => 'gebruikersnaam',
         'year'                  => 'jaar',
+        'measured_at'           => 'datum'
     ],
 ];

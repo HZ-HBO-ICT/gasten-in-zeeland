@@ -1,28 +1,31 @@
-@extends('layouts.app')
+@extends('common.page')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
 
-                <div class="card-body">
-                    @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
-                    @endif
+                <div class="column is-8-desktop is-12-tablet">
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
-                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
-                        @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
-                    </form>
+                    <div class="content">
+                        <h1>{{ __('Verify Your Email Address') }}</h1>
+                        @include('common.notifications')
+                        @if (session('resent'))
+                            <div class="notification is-success">
+                                <button class="delete"></button>
+                                {{ __('A fresh verification link has been sent to your email address.') }}
+                            </div>
+                        @endif
+                        {{ __('Before proceeding, please check your email for a verification link.') }}
+                        {{ __('If you did not receive the email') }},
+                        <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                            @csrf
+                            <button type="submit" class="button is-primary">{{ __('click here to request another') }}</button>.
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+
 @endsection

@@ -47,12 +47,15 @@ class StatusController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
+            'measured_at' => 'required|date|unique:statuses',
             'count' => 'required|integer|min:0'
         ]);
 
+        //Carbon::setLocale(LC_TIME, );
+
         Auth::user()->statuses()->create($data);
 
-        return redirect('home');
+        return redirect('home')->with('success', __('app.statuses.create.success'));
     }
 
     /**

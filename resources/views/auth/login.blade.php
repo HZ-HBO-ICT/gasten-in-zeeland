@@ -10,9 +10,9 @@
                         <form method="POST" action="{{ route('login') }}" class="box">
                             @csrf
                             <div class="field">
-                                <label for="email" class="label">{{ __('E-Mail Address') }}</label>
+                                <label for="email" class="label">{{ __('auth.email') }}</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input type="email" name="email" placeholder="e.g. bobsmith@gmail.com"
+                                    <input type="email" name="email" placeholder="{{ __('auth.password_placeholder') }}"
                                            class="input @error('email') is-danger @enderror"
                                            value="{{ old('email') }}" required autocomplete="email" autofocus>
                                     <span class="icon is-small is-left">
@@ -29,7 +29,7 @@
                                 @enderror
                             </div>
                             <div class="field">
-                                <label for="password" class="label">{{ __('Password') }}</label>
+                                <label for="password" class="label">{{ __('auth.password') }}</label>
                                 <div class="control has-icons-left has-icons-right">
                                     <input id="password" type="password"
                                            class="input @error('password') is-danger @enderror"
@@ -48,21 +48,14 @@
                                 @enderror
                             </div>
                             <div class="field">
-                                <label for="" class="checkbox">
-                                    <input class="form-check-input" type="checkbox" name="remember"
-                                           id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                    {{ __('Remember Me') }}
-                                </label>
-                            </div>
-                            <div class="field">
                                 <button class="button is-success">
-                                    {{ __('Login') }}
+                                    {{ __('app.login') }}
                                 </button>
                             </div>
                             <div class="field">
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link level-right" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('auth.password_forgot') }}
                                     </a>
                                 @endif
                             </div>

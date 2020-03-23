@@ -11,6 +11,28 @@
                 @csrf
                 {{-- Here are all the form fields --}}
                 <div class="field">
+                    <label for="measured_at" class="label">{{ __('app.date') }}</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input type="date" name="measured_at" placeholder=""
+                               class="input @error('measured_at') is-danger @enderror"
+                               value="{{
+                                    old('measured_at') ? old('measured_at') : $current_date->format('Y-m-d')
+                                }}" max="{{ $current_date->format('Y-m-d') }}" required>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-calendar-alt"></i>
+                        </span>
+                        @error('measured_at')
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </span>
+                        @enderror
+                    </div>
+                    @error('measured_at')
+                    <p class="help is-danger">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="field">
                     <label for="count" class="label">{{ __('app.statuses.count') }}</label>
                     <div class="control has-icons-left has-icons-right">
                         <input type="count" name="count" placeholder="{{ __('app.statuses.count_placeholder') }}"
@@ -38,9 +60,6 @@
                 </div>
                 <div class="control">
                     <button type="reset" class="button is-warning">{{ __('app.form.reset') }}</button>
-                </div>
-                <div class="control">
-                    <a type="button" href="/posts" class="button is-light">{{ __('app.form.cancel') }}</a>
                 </div>
             </div>
         </div>
