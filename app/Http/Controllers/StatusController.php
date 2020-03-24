@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateStatusRequest;
 use App\Status;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,19 +42,12 @@ class StatusController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\CreateStatusRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateStatusRequest $request)
     {
-        $data = $request->validate([
-            'measured_at' => 'required|date|unique:statuses',
-            'count' => 'required|integer|min:0'
-        ]);
-
-        //Carbon::setLocale(LC_TIME, );
-
-        Auth::user()->statuses()->create($data);
+        Auth::user()->statuses()->create($request->validated());
 
         return redirect('home')->with('success', __('app.statuses.create.success'));
     }
