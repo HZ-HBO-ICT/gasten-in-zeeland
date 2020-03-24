@@ -128,6 +128,7 @@ return [
     'custom' => [
         'measured_at' => [
             'unique' => 'Er is al een meting voor deze :attribute ingevoerd',
+            'composite_unique' => 'Er is al een meting voor deze :attribute ingevoerd',
         ],
     ],
     /*
@@ -182,6 +183,7 @@ return [
         'title'                 => 'titel',
         'username'              => 'gebruikersnaam',
         'year'                  => 'jaar',
-        'measured_at'           => 'datum'
+        'measured_at'           => 'datum',
+        'count'                 => 'aantal gasten'
     ],
 ];
