@@ -12,7 +12,7 @@
                             <div class="field">
                                 <label for="name" class="label">{{ __('auth.name') }}</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input type="name" name="name" placeholder="e.g. John Doe"
+                                    <input type="name" name="name" placeholder="{{ __('e.g. John Doe') }}"
                                            class="input @error('name') is-danger @enderror"
                                            value="{{ old('name') }}" required autocomplete="name" autofocus>
                                     <span class="icon is-small is-left">
@@ -31,7 +31,7 @@
                             <div class="field">
                                 <label for="lodging_name" class="label">{{ __('auth.lodging_name') }}</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input type="text" name="lodging_name" placeholder="e.g. Tonhil hotel"
+                                    <input type="text" name="lodging_name" placeholder="{{ __('e.g. Tonhil hotel') }}"
                                            class="input @error('lodging_name') is-danger @enderror"
                                            value="{{ old('lodging_name') }}" required autocomplete="lodging_name" autofocus>
                                     <span class="icon is-small is-left">
