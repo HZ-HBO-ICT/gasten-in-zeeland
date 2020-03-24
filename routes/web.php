@@ -15,14 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    if (Auth::user())
+        return redirect('/home');
     return view('welcome');
 });
 
-
-
-// Resource routes of the base pages. For more info on Resource Routes
-Route::resource('/statuses', 'StatusController');
-
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Resource routes of the base pages. For more info on Resource Routes
+Route::resource('/statuses', 'StatusController')->middleware('verified');
+
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');;

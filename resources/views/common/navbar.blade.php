@@ -11,16 +11,6 @@
             </a>
         </div>
         <div class="navbar-menu" id="navMenu">
-            <div class="navbar-start">
-                <a href="/"
-                   class="navbar-item {{ Request::path() === '/' ? "is-active" : "" }}">
-                    Home
-                </a>
-                <a href="/posts"
-                   class="navbar-item {{ Request::path() === 'posts' ? "is-active" : "" }}">
-                    Nieuws
-                </a>
-            </div>
             <div class="navbar-end">
                 <x-user></x-user>
             </div>
