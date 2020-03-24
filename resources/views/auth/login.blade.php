@@ -10,9 +10,9 @@
                         <form method="POST" action="{{ route('login') }}" class="box">
                             @csrf
                             <div class="field">
-                                <label for="email" class="label">{{ __('auth.email') }}</label>
+                                <label for="email" class="label">{{ __('E-Mail Address') }}</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input type="email" name="email" placeholder="{{ __('auth.password_placeholder') }}"
+                                    <input type="email" name="email" placeholder="{{ __('e.g. bobsmith@gmail.com') }}"
                                            class="input @error('email') is-danger @enderror"
                                            value="{{ old('email') }}" required autocomplete="email" autofocus>
                                     <span class="icon is-small is-left">
@@ -29,7 +29,7 @@
                                 @enderror
                             </div>
                             <div class="field">
-                                <label for="password" class="label">{{ __('auth.password') }}</label>
+                                <label for="password" class="label">{{ __('Password') }}</label>
                                 <div class="control has-icons-left has-icons-right">
                                     <input id="password" type="password"
                                            class="input @error('password') is-danger @enderror"
@@ -49,13 +49,13 @@
                             </div>
                             <div class="field">
                                 <button class="button is-success">
-                                    {{ __('app.login') }}
+                                    {{ __('Login') }}
                                 </button>
                             </div>
                             <div class="field">
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link level-right" href="{{ route('password.request') }}">
-                                        {{ __('auth.password_forgot') }}
+                                        {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
                             </div>

@@ -20,7 +20,7 @@
                         <div class="navbar-end">
                             <span class="navbar-item">
                                 <a class="button is-primary is-inverted" href="/login">
-                                    {{ __('app.login') }}
+                                    {{ __('Login') }}
                                 </a>
                             </span>
                         </div>
@@ -39,7 +39,7 @@
                     Monitoren van aanwezige gasten in de provincie
                 </h2>
                 <a class="button is-success" href="/register">
-                    {{ __('app.register') }}
+                    {{ __('Register') }}
                 </a>
             </div>
         </div>

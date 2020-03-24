@@ -1,47 +1,53 @@
-@extends('layouts.app')
+@extends('common.page')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-desktop is-12-tablet">
 
-                <div class="card-body">
-                    @if (session('statuses'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('statuses') }}
-                        </div>
-                    @endif
+                    <div class="content">
+                        <h1>{{ __('Reset Password') }}</h1>
+                        @include('common.notifications')
+                        @if (session('statuses'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('statuses') }}
+                            </div>
+                        @endif
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
+                        <form method="POST" action="{{ route('password.email') }}">
+                            @csrf
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                            <div class="field">
+                                <label for="email" class="label">{{ __('E-Mail Address') }}</label>
+                                <div class="control has-icons-left has-icons-right">
+                                    <input type="email" name="email" placeholder="{{ __('e.g. bobsmith@gmail.com') }}"
+                                           class="input @error('email') is-danger @enderror"
+                                           value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope"></i>
                                     </span>
+                                    @error('email')
+                                    <span class="icon is-small is-right">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </span>
+                                    @enderror
+                                </div>
+                                @error('email')
+                                <p class="help is-danger">{{ $message }}</p>
                                 @enderror
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="field">
+                                <button type="submit" class="button is-success">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+
 @endsection

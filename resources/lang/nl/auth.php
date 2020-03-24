@@ -12,9 +12,6 @@ return [
     |
     */
 
-    'name' => 'Naam',
-    'lodging_name' => 'Accomodatie naam',
-    'lodging_max' => 'Maximaal aantal gasten in de accomodatie',
     'email' => "E-Mail adres",
     'email_placeholder' => "bv. devries@hz.nl",
     'password' => 'Wachtwoord',
