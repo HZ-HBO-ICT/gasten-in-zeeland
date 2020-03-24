@@ -10,7 +10,7 @@
                         <form method="POST" action="{{ route('register') }}" class="box">
                             @csrf
                             <div class="field">
-                                <label for="name" class="label">{{ __('auth.name') }}</label>
+                                <label for="name" class="label">{{ __('Name') }}</label>
                                 <div class="control has-icons-left has-icons-right">
                                     <input type="name" name="name" placeholder="{{ __('e.g. John Doe') }}"
                                            class="input @error('name') is-danger @enderror"
@@ -29,7 +29,7 @@
                                 @enderror
                             </div>
                             <div class="field">
-                                <label for="lodging_name" class="label">{{ __('auth.lodging_name') }}</label>
+                                <label for="lodging_name" class="label">{{ __('Name of your establishment') }}</label>
                                 <div class="control has-icons-left has-icons-right">
                                     <input type="text" name="lodging_name" placeholder="{{ __('e.g. Tonhil hotel') }}"
                                            class="input @error('lodging_name') is-danger @enderror"
@@ -48,9 +48,9 @@
                                 @enderror
                             </div>
                             <div class="field">
-                                <label for="lodging_max" class="label">{{ __('auth.lodging_max') }}</label>
+                                <label for="lodging_max" class="label">{{ __('Maximum number of guests for your establishment') }}</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input type="text" name="lodging_max" placeholder="{{ __('auth.lodging_max_placeholder') }}"
+                                    <input type="text" name="lodging_max" placeholder="{{ __('e.g. 123') }}"
                                            class="input @error('lodging_max') is-danger @enderror"
                                            value="{{ old('lodging_max') }}" required autocomplete="lodging_max" autofocus>
                                     <span class="icon is-small is-left">
@@ -67,9 +67,9 @@
                                 @enderror
                             </div>
                             <div class="field">
-                                <label for="email" class="label">{{ __('auth.email') }}</label>
+                                <label for="email" class="label">{{ __('E-Mail Address') }}</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input type="email" name="email" placeholder="e.g. bobsmith@gmail.com"
+                                    <input type="email" name="email" placeholder="{{ __('e.g. bobsmith@gmail.com') }}"
                                            class="input @error('email') is-danger @enderror"
                                            value="{{ old('email') }}" required autocomplete="email" autofocus>
                                     <span class="icon is-small is-left">
@@ -88,7 +88,7 @@
                             <div class="field">
                                 <label for="password" class="label">{{ __('Password') }}</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input type="password" name="password" placeholder="*******"
+                                    <input type="password" name="password"
                                            class="input @error('password') is-danger @enderror"
                                            value="{{ old('password') }}" required autocomplete="password" autofocus>
                                     <span class="icon is-small is-left">
@@ -107,7 +107,7 @@
                             <div class="field">
                                 <label for="password_confirmation" class="label">{{ __('Confirm Password') }}</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input type="password" name="password_confirmation" placeholder="*****"
+                                    <input type="password" name="password_confirmation"
                                            class="input @error('password_confirmation') is-danger @enderror"
                                            value="{{ old('password_confirmation') }}" required autocomplete="password_confirmation">
                                     <span class="icon is-small is-left">
@@ -129,10 +129,10 @@
                                     <button type="submit" class="button is-primary">{{ __('Register') }}</button>
                                 </div>
                                 <div class="control">
-                                    <button type="reset" class="button is-warning">{{ __('app.form.reset') }}</button>
+                                    <button type="reset" class="button is-warning">{{ __('Reset') }}</button>
                                 </div>
                                 <div class="control">
-                                    <a type="button" href="/" class="button is-light">{{ __('app.form.cancel') }}</a>
+                                    <a type="button" href="/" class="button is-light">{{ __('Cancel') }}</a>
                                 </div>
                             </div>
                         </form>
