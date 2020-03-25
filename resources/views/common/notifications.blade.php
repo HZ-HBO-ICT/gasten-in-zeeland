@@ -1,3 +1,9 @@
+@if (session('status')) {{-- status messages are for auth and password messages --}}
+    <div class="notification is-success">
+        <button class="delete"></button>
+        {{ session('status') }}
+    </div>
+@endif
 @if(session('info'))
     <div class="notification is-info">
         <button class="delete"></button>
