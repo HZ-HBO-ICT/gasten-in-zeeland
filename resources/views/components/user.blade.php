@@ -4,7 +4,7 @@
         <a class="navbar-link">{{ $user->name }}</a>
 
         <div class="navbar-dropdown">
-            <a class="navbar-link" href="{{ route('logout') }}"
+            <a class="navbar-item" href="{{ route('logout') }}"
                onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                 {{ __('Logout') }}
             </a>
@@ -19,8 +19,8 @@
     <a class="navbar-link">{{ __('Login') }}</a>
 
     <div class="navbar-dropdown">
-        <a class="navbar-link" href="\login">{{ __('Login') }}</a>
-        <a class="navbar-link" href="\register">{{ __('Register') }}</a>
+        <a class="navbar-item" href="\login">{{ __('Login') }}</a>
+        <a class="navbar-item" href="\register">{{ __('Register') }}</a>
     </div>
 </div>
 @endif
