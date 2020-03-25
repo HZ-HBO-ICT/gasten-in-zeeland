@@ -184,6 +184,7 @@ return [
         'username'              => 'gebruikersnaam',
         'year'                  => 'jaar',
         'measured_at'           => 'datum',
-        'count'                 => 'aantal gasten'
+        'count'                 => 'aantal gasten',
+        'lodging_max'           => 'maximaal aantal gasten',
     ],
 ];

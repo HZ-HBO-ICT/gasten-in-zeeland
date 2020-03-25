@@ -130,8 +130,9 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'measured_at' => [
+            'unique' => 'Er is al een meting voor deze :attribute ingevoerd',
+            'composite_unique' => 'Er is al een meting voor deze :attribute ingevoerd',
         ],
     ],
 
@@ -146,6 +147,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'year'                  => 'year',
+        'measured_at'           => 'date',
+        'count'                 => 'number of guests',
+        'lodging_max'           => 'maximum number of guests',
+    ],
 
 ];
