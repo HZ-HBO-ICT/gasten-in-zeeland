@@ -11,14 +11,16 @@
                             <strong><i class="fas fa-bed"></i> GiZ</strong>
                         </a>
                         @hasSection('navbar-menu')
-                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                           data-target="navMenu">
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
                         </a>
                         @endif
                     </div>
-                    <div id="navbarMenuHeroA" class="navbar-menu">
+
+                    <div id="navMenu" class="navbar-menu">
                         @yield('navbar-menu')
                     </div>
                 </div>
@@ -43,13 +45,57 @@
         <div class="hero-foot">
             <nav class="tabs">
                 <div class="container">
-                    <ul>
-                        <li><a href="https://www.csrhymes.com">Theme built by C.S. Rhymes</a>
-                        </li>
-                        <li><a href="https://github.com/dwaard">Adapted by BugSlayer</a></li>
-                    </ul>
+                    <div class="content has-text-centered">
+                        <p>
+                            De registratie is mogelijk gemaakt door
+                        </p>
+                    </div>
+                    <div class="columns is-multiline">
+
+                        <div class="column has-text-centered">
+                            <div>
+                                <a href="https://campuszeeland.nl/downloads/kennis-en-innovatienetwerk-toerisme.html">
+                                    Toeristisch Ondernemend Zeeland
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div>
+                                <a href="https://hz.nl/lectoraten/data-science">
+                                    HZ University of applied science, lectoraat data science
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div>
+                                <a href="https://www.kenniscentrumtoerisme.nl/wiki/index.php/Kenniscentrum_Kusttoerisme">
+                                    Kenniscentrum Kusttoerisme
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div>
+                                <a href="https://www.zeeland.nl/">
+                                    Provincie Zeeland
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div>
+                                <a href="https://www.veiligheidsregiozeeland.nl/">
+                                    Veiligheidsregio Zeeland
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </nav>
         </div>
     </section>
 @endsection
+
