@@ -16,9 +16,8 @@
                         <input type="date" name="measured_at" placeholder=""
                                class="input @error('measured_at') is-danger @enderror"
                                value="{{
-                                    old('measured_at') ? old('measured_at') : $current_date ?? ''->format('Y-m-d')
-                                }}" max="{{ $current_date ?? ''->format('Y-m-d') }}" required>
-                        <span class="icon is-small is-left">
+                                    old('measured_at') ? old('measured_at') : $current_date->format('Y-m-d')
+                                }}" max="{{ $current_date->format('Y-m-d') }}" required>                        <span class="icon is-small is-left">
                             <i class="fas fa-calendar-alt"></i>
                         </span>
                         @error('measured_at')
