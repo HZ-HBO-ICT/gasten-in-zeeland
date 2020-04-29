@@ -3,7 +3,7 @@
 @section('navbar-menu')
     <div class="navbar-end">
         <span class="navbar-item">
-            <a class="button is-primary is-inverted" href="/login">
+            <a class="button is-primary is-inverted" href="('login')">
                 {{ __('Login') }}
             </a>
         </span>
@@ -26,7 +26,7 @@
         geanonimiseerd door de Veiligheidsregio ingezien worden. Om privacy redenen worden de
         gegevens na drie weken vernietigd.
     </p>
-    <a class="button is-success" href="/register">
+    <a class="button is-success" href="{{ route('register')}}">
         {{ __('Register') }}
     </a>
     </div>
