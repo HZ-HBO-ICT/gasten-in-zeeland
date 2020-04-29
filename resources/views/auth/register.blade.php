@@ -89,15 +89,15 @@
                            class="input @error('kvk_number') is-danger @enderror"
                            value="{{ old('kvk_number') }}" required autocomplete="kvk_number" autofocus>
                     <span class="icon is-small is-left">
-                    <i class="fas fa-kvk_number"></i>
-                </span>
+                        <i class="fas fa-kvk_number"></i>
+                    </span>
                     @error('kvk_number')
                     <span class="icon is-small is-right">
-                    <i class="fas fa-exclamation-triangle"></i>
-                </span>
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
                     @enderror
                 </div>
-                @error('email')
+                @error('kvk_number')
                 <p class="help is-danger">{{ $message }}</p>
                 @enderror
             </div>
