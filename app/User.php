@@ -23,7 +23,8 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     protected $encryptable = [
-        'kvk_number', 
+        'email',
+        'kvk_number',
         'password',
         'name',
         'lodging_name',

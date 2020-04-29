@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->boolean('isAdmin')->default(false);
             $table->TEXT('lodging_name');
             $table->integer('lodging_max');
-            $table->string('email')->unique();
+            $table->string('email', "750")->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->TEXT('password');
             $table->TEXT('kvk_number');
