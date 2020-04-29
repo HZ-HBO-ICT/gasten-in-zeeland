@@ -3,7 +3,7 @@
 @section('navbar-menu')
     <div class="navbar-end">
         <span class="navbar-item">
-            <a class="button is-primary is-inverted" href="('login')">
+            <a class="button is-primary is-inverted" href="{{route('login')}}">
                 {{ __('Login') }}
             </a>
         </span>

@@ -23,7 +23,6 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     protected $encryptable = [
-        'email',
         'kvk_number',
         'password',
         'name',
@@ -58,7 +57,5 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany('App\Status');
     }
-
-    protected $table = 'users';
 
 }
