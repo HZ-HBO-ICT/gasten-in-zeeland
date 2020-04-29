@@ -9,7 +9,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use betterapp\LaravelDbEncrypter\Traits\EncryptableDbAttribute;
+
 
 
 class RegisterController extends Controller
@@ -24,7 +24,6 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-    use EncryptableDbAttribute;
     use RegistersUsers;
 
     /**
@@ -59,7 +58,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'kvk_number'=>['required','integer','max:8'],
+            'kvk_number'=>['required','integer','digits:8'],
             'lodging_name' => ['required', 'string', 'max:255'],
             'lodging_max' => ['required', 'integer', 'min:0'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -85,13 +84,7 @@ class RegisterController extends Controller
         ]);
         session()->flash('success', __('auth.register.email_sent'));
     }
-    protected $encryptable = [
-        'kvk_number', 
-        'email',
-        'password',
-        'name',
-        'lodging_name',
-    ];
+   
 
     public function store(Request $request){
 

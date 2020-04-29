@@ -5,11 +5,13 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use betterapp\LaravelDbEncrypter\Traits\EncryptableDbAttribute;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
+    use EncryptableDbAttribute;
 
     /**
      * The attributes that are mass assignable.
@@ -18,6 +20,13 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'name','kvk_number' ,'lodging_name', 'lodging_max', 'email', 'password',
+    ];
+
+    protected $encryptable = [
+        'kvk_number', 
+        'password',
+        'name',
+        'lodging_name',
     ];
 
     /**
