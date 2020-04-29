@@ -186,5 +186,6 @@ return [
         'measured_at'           => 'datum',
         'count'                 => 'aantal gasten',
         'lodging_max'           => 'maximaal aantal gasten',
+        'kvk_number'            => 'KVK nummer',
     ],
 ];
