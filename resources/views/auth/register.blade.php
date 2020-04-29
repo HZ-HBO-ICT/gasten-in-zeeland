@@ -83,6 +83,25 @@
                 @enderror
             </div>
             <div class="field">
+                <label for="kvk_number" class="label">{{ __('KVK-nummer') }}</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input type="integer" name="kvk_number" placeholder="{{ __('e.g. 34568732') }}"
+                           class="input @error('kvk_number') is-danger @enderror"
+                           value="{{ old('kvk_number') }}" required autocomplete="kvk_number" autofocus>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-kvk_number"></i>
+                    </span>
+                    @error('kvk_number')
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                    @enderror
+                </div>
+                @error('kvk_number')
+                <p class="help is-danger">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="field">
                 <label for="password" class="label">{{ __('Password') }}</label>
                 <div class="control has-icons-left has-icons-right">
                     <input type="password" name="password"

@@ -26,4 +26,8 @@ Auth::routes(['verify' => true]);
 Route::resource('/statuses', 'StatusController')->middleware('verified');
 
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');;
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+//Route::get('auth/login','Auth\LoginController@index')->name('login');
+Route::get('auth/register','Auth\RegisterController@index')->name('register');
+Route::get('auth/register','Auth\RegisterController@create');
+Route::post('auth/register', 'Auth\RegisterController@store');

@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+
+
 
 class RegisterController extends Controller
 {
@@ -21,7 +24,6 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
     use RegistersUsers;
 
     /**
@@ -41,6 +43,11 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function index(){
+
+        return view('auth/register');
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -51,6 +58,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'kvk_number'=>['required','integer','digits:8'],
             'lodging_name' => ['required', 'string', 'max:255'],
             'lodging_max' => ['required', 'integer', 'min:0'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -69,10 +77,21 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'kvk_number' => $data['kvk_number'],
             'lodging_name' => $data['lodging_name'],
             'lodging_max' => $data['lodging_max'],
             'password' => Hash::make($data['password']),
         ]);
         session()->flash('success', __('auth.register.email_sent'));
     }
+   
+
+    public function store(Request $request){
+
+    
+        User::create($request->all());
+        
+
+    } 
+    
 }

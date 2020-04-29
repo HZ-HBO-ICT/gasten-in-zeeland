@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "91eb9bbb863b7651bbaf49effa5bf3f3",
+    "content-hash": "b91586e5c46b1fa4d4354ecb26d680ff",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -57,6 +57,66 @@
                 "stack"
             ],
             "time": "2019-12-24T22:41:47+00:00"
+        },
+        {
+            "name": "betterapp/laravel-db-encrypter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/betterapp/laravel-db-encrypter.git",
+                "reference": "1015484d4ec216f6fdda847732d90fb51997e842"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/betterapp/laravel-db-encrypter/zipball/1015484d4ec216f6fdda847732d90fb51997e842",
+                "reference": "1015484d4ec216f6fdda847732d90fb51997e842",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "betterapp\\LaravelDbEncrypter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Czestki",
+                    "email": "daniel@betterapp.net",
+                    "homepage": "https://github.com/betterapp",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Provides database model attribute encryption/decryption",
+            "keywords": [
+                "attribute",
+                "database",
+                "database encrypter",
+                "database encryption",
+                "decrypt",
+                "decrypted",
+                "decryption",
+                "eloquent",
+                "encrypt",
+                "encrypter",
+                "encryption",
+                "laravel",
+                "laravel attribute encrypter",
+                "laravel attribute encryption",
+                "laravel database encrypter",
+                "laravel database encryption",
+                "laravel db encrypter",
+                "laravel db encryption",
+                "laravel model encrypter",
+                "laravel model encryption"
+            ],
+            "time": "2020-02-23T20:11:34+00:00"
         },
         {
             "name": "brick/math",
@@ -5511,7 +5571,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "betterapp/laravel-db-encrypter": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
