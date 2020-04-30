@@ -60,7 +60,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'kvk_number'=>['required','integer','digits:8'],
             'organisation' => ['required', 'string', 'max:255'],
-            'accomodation'=>['string','max:255'],
+            'accomodation'=>['nullable', 'string','max:255'],
             'max_capacity' => ['required', 'integer', 'min:0'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -86,14 +86,14 @@ class RegisterController extends Controller
         ]);
         session()->flash('success', __('auth.register.email_sent'));
     }
-   
+
 
     public function store(Request $request){
 
-    
-        User::create($request->all());
-        
 
-    } 
-    
+        User::create($request->all());
+
+
+    }
+
 }
