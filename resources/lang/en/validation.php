@@ -151,7 +151,9 @@ return [
         'year'                  => 'year',
         'measured_at'           => 'date',
         'count'                 => 'number of guests',
-        'lodging_max'           => 'maximum number of guests',
+        'organization'          => 'organization',
+        'accomodation'         => 'accommodation',
+        'max_capacity'          => 'maximum number of guests',
     ],
 
 ];
