@@ -4,22 +4,20 @@
         <a class="navbar-link">{{ $user->name }}</a>
 
         <div class="navbar-dropdown">
+            @if($user->isAdmin)
+                <a class="navbar-item" href="{{ route('admin') }}">
+                    <i class="fas fa-cogs"></i>&nbsp;{{__('Admin')}}
+                </a>
+                <hr class="dropdown-divider">
+            @endif
             <a class="navbar-item" href="{{ route('logout') }}"
                onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
-                {{ __('Logout') }}
+                <i class="fas fa-sign-out-alt"></i>&nbsp;{{ __('Logout') }}
             </a>
             <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form>
         </div>
-        @if($user->isAdmin)
-        <div class="navbar-dropdown">
-             <a class="navbar-item" href="/admin">{{__('Admin')}}</a>
-            <form id="frm-admin" action="{{ route('admin') }}" method="GET" style="display: none;">
-                {{ csrf_field() }}
-            </form>
-        </div>
-        @endif
     </div>
 </div>
 @else
