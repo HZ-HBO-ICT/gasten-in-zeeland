@@ -48,7 +48,7 @@
                 <div class="control has-icons-left has-icons-right">
                     <input type="text" name="accomodation" placeholder="{{ __('e.g. hotel') }}"
                            class="input @error('accomodation') is-danger @enderror"
-                           value="{{ old('accomodation') }}" required autocomplete="accomodation" autofocus>
+                           value="{{ old('accomodation') }}" autocomplete="accomodation" autofocus>
                     <span class="icon is-small is-left">
                     <i class="fas fa-hotel"></i>
                 </span>
