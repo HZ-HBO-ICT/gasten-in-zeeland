@@ -12,7 +12,7 @@
         <div class="container">
             <div class="columns">
 
-                <div class="column is-8-desktop is-12-tablet">
+                <div class="column is-offset-3-desktop is-6-desktop is-12-tablet">
 
                     <div class="content">
                         <h1>Welkom op de website van Gasten in Zeeland.</h1>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
 
-                <div class="column is-4-desktop is-12-tablet">
+                <!-- <div class="column is-4-desktop is-12-tablet">
                     <p class="title is-4">Nieuw(s) Online</p>
 
                     <div class="columns is-multiline">
@@ -60,7 +60,7 @@
 
                     </div>
 
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
