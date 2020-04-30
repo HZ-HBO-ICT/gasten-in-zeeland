@@ -45,6 +45,13 @@
                 @enderror
             </div>
             <div class="field">
+                <label class="checkbox" for="remember">
+                    <input type="checkbox" name="remember" id="remember"
+                        {{ old('remember') ? 'checked' : '' }}>
+                    {{ __('Remember Me') }}
+                </label>
+            </div>
+            <div class="field">
                 <button class="button is-success">
                     {{ __('Login') }}
                 </button>
