@@ -35,7 +35,7 @@
 
 
                 <div class="field">
-                    <label for="count" class="label">{{ Auth::user()->max_allowed }}</label>
+                    <label for="count" class="label">{{ __('Guest count') }}</label>
                     <div class="control has-icons-left has-icons-right">
                         <input type="count" name="count" placeholder="{{ __('app.statuses.count_placeholder') }}"
                                class="input @error('count') is-danger @enderror"
@@ -52,6 +52,7 @@
                     @error('count')
                     <p class="help is-danger">{{ $message }}</p>
                     @enderror
+                    <p class="help">{{ Auth::user()->guestCountHelpMessage() }}</p>
                 </div>
 
             </div>

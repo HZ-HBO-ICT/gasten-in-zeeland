@@ -43,7 +43,7 @@ class CreateStatusRequest extends FormRequest
         // get today's date for validation measured_at
         $today = Carbon::now()->setHour(0)->setMinutes(0)->setSeconds(0)->addDay(1)->toDateString();
 
-        $max_count = Auth::user()->lodging_max;
+        $max_count = Auth::user()->max_capacity;
 
         return [
             'measured_at' => 'required|date|composite_unique:statuses,measured_at,user_id|before:'.$today,

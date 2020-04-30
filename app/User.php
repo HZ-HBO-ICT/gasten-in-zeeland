@@ -58,14 +58,32 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany('App\Status');
     }
 
+
+    /**
+     * Returns the max allowed capacity by the government.
+     *
+     * @return int
+     */
     public function getMaxAllowedAttribute(){
 
-        $allowed_percentage = 15;
-        $result = 0.01 * $this->max_capacity * $allowed_percentage;
+        $result = 0.01 * $this->max_capacity *
+            env('MAX_ALLOWED_CAPACITY', 15);
 
-        $num = $result;
-        $guestSentence = 'Aantal gasten (op dit moment zijn maximaal %d gasten (15%%) toegestaan. ';
-        return sprintf($guestSentence, $num);
+        return intval($result);
     }
+
+    /**
+     * Returns a help message string for the count form field
+     * @return string
+     */
+    public function guestCountHelpMessage()
+    {
+        return __('Currently, there is a maximum of :max_count guests (:max_percentage%) allowed', [
+            'max_count' => $this->max_allowed,
+            'max_percentage' => env('MAX_ALLOWED_CAPACITY', 15)
+        ]);
+    }
+
+
 
 }

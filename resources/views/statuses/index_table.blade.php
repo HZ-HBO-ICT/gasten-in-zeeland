@@ -7,7 +7,13 @@
     @foreach($statuses as $status)
         <tr>
             <td>{{ $status->measured_at->locale(app()->getLocale())->isoFormat('D MMMM YYYY') }}</td>
-            <td>{{ $status->count }}</td>
+            <td>
+                <span class="{{ $status->is_overcrowded ? 'has-text-danger' : '' }}">
+                    {{ $status->count }}
+                    @if($status->is_overcrowded)
+                        &nbsp;<i class="fas fa-exclamation-triangle"></i></span>
+                    @endif
+            </td>
         </tr>
     @endforeach
     </tbody>
