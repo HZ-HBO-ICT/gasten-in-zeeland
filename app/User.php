@@ -70,7 +70,7 @@ class User extends Authenticatable implements MustVerifyEmail
         $result = 0.01 * $this->max_capacity *
             env('MAX_ALLOWED_CAPACITY', 15);
 
-        return intval($result);
+        return round($result, 0);
     }
 
     /**
