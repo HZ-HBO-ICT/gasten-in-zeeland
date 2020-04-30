@@ -11,14 +11,14 @@
                 @csrf
                 {{-- Here are all the form fields --}}
                 <div class="field">
-                
+
                     <label for="measured_at" class="label">{{ __('app.date') }}</label>
                     <div class="control has-icons-left has-icons-right">
                         <input type="date" name="measured_at" placeholder=""
                                class="input @error('measured_at') is-danger @enderror"
                                value="{{
-                                    old('measured_at') ? old('measured_at') : $current_date ?? ''->format('Y-m-d')
-                                }}" max="{{ $current_date ?? ''->format('Y-m-d') }}" required>
+                                    old('measured_at') ? old('measured_at') : $current_date->format('Y-m-d')}}"
+                               max="{{ $current_date->format('Y-m-d') }}" required>
                         <span class="icon is-small is-left">
                             <i class="fas fa-calendar-alt"></i>
                         </span>
@@ -33,7 +33,7 @@
                     @enderror
                 </div>
 
-                                
+
                 <div class="field">
                     <label for="count" class="label">{{ Auth::user()->max_allowed }}</label>
                     <div class="control has-icons-left has-icons-right">
