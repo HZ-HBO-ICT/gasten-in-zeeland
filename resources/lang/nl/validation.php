@@ -187,7 +187,7 @@ return [
         'count'                 => 'aantal gasten',
         'max_capacity'          => 'maximaal aantal gasten',
         'organization'          => 'organisatie',
-        'accomodation'          => 'accomodatie',
+        'accommodation'          => 'accomodatie',
         'kvk_number'            => 'KVK nummer',
     ],
 ];

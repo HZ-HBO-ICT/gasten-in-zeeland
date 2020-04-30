@@ -44,21 +44,21 @@
                 @enderror
             </div>
             <div class="field">
-                <label for="accomodation" class="label">{{ __('Accomodatie (indien van toepassing)') }}</label>
+                <label for="accommodation" class="label">{{ __('Accomodatie (indien van toepassing)') }}</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input type="text" name="accomodation" placeholder="{{ __('e.g. hotel') }}"
-                           class="input @error('accomodation') is-danger @enderror"
-                           value="{{ old('accomodation') }}" autocomplete="accomodation" autofocus>
+                    <input type="text" name="accommodation" placeholder="{{ __('e.g. hotel') }}"
+                           class="input @error('accommodation') is-danger @enderror"
+                           value="{{ old('accommodation') }}" autocomplete="accommodation" autofocus>
                     <span class="icon is-small is-left">
                     <i class="fas fa-hotel"></i>
                 </span>
-                    @error('accomodation')
+                    @error('accommodation')
                     <span class="icon is-small is-right">
                     <i class="fas fa-exclamation-triangle"></i>
                 </span>
                     @enderror
                 </div>
-                @error('accomodation')
+                @error('accommodation')
                 <p class="help is-danger">{{ $message }}</p>
                 @enderror
             </div>

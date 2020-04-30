@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->text('name');
             $table->boolean('isAdmin')->default(false);
             $table->text('organisation');
-            $table->text('accomodation')->nullable();
+            $table->text('accommodation')->nullable();
             $table->integer('max_capacity');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

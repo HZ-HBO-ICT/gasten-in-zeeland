@@ -2,11 +2,11 @@
 
 # Gasten in Zeeland (Guests in Zeeland)
 
-Gathers data from accomodations in Zeeland for monitoring during COVID-19 crisis.
+Gathers data from accommodations in Zeeland for monitoring during COVID-19 crisis.
 
 ## Features
 
-* Accomodation managers can add guest count on a daily basis
+* accommodation managers can add guest count on a daily basis
 * Data can be downloaded for local analysis
 
 ## Developing

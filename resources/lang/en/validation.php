@@ -152,7 +152,7 @@ return [
         'measured_at'           => 'date',
         'count'                 => 'number of guests',
         'organization'          => 'organization',
-        'accomodation'         => 'accommodation',
+        'accommodation'         => 'accommodation',
         'max_capacity'          => 'maximum number of guests',
     ],
 
