@@ -59,9 +59,9 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'kvk_number'=>['required','integer','digits:8'],
-            'lodging_name' => ['required', 'string', 'max:255'],
+            'organisation' => ['required', 'string', 'max:255'],
             'accomodation'=>['string','max:255'],
-            'lodging_max' => ['required', 'integer', 'min:0'],
+            'max_capacity' => ['required', 'integer', 'min:0'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -79,9 +79,9 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'kvk_number' => $data['kvk_number'],
-            'lodging_name' => $data['lodging_name'],
+            'organisation' => $data['organisation'],
             'accomodation' => $data['accomodation'],
-            'lodging_max' => $data['lodging_max'],
+            'max_capacity' => $data['max_capacity'],
             'password' => Hash::make($data['password']),
         ]);
         session()->flash('success', __('auth.register.email_sent'));

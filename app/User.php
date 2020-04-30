@@ -19,14 +19,14 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name','kvk_number' ,'lodging_name','accomodation' ,'lodging_max', 'email', 'password',
+        'name','kvk_number' ,'organisation','accomodation' ,'max_capacity', 'email', 'password',
     ];
 
     protected $encryptable = [
         'kvk_number',
         'password',
         'name',
-        'lodging_name',
+        'organisation',
     ];
 
     /**
@@ -56,6 +56,16 @@ class User extends Authenticatable implements MustVerifyEmail
     public function statuses()
     {
         return $this->hasMany('App\Status');
+    }
+
+    public function getMaxAllowedAttribute(){
+
+        $allowed_percentage = 15;
+        $result = 0.01 * $this->max_capacity * $allowed_percentage;
+
+        $num = $result;
+        $guestSentence = 'Aantal gasten (op dit moment zijn maximaal %d gasten (15%%) toegestaan. ';
+        return sprintf($guestSentence, $num);
     }
 
 }

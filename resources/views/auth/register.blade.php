@@ -25,21 +25,21 @@
                 @enderror
             </div>
             <div class="field">
-                <label for="lodging_name" class="label">{{ __('Naam van uw onderneming') }}</label>
+                <label for="organisation" class="label">{{ __('Naam van uw onderneming') }}</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input type="text" name="lodging_name" placeholder="{{ __('e.g. Tonhil hotel') }}"
-                           class="input @error('lodging_name') is-danger @enderror"
-                           value="{{ old('lodging_name') }}" required autocomplete="lodging_name" autofocus>
+                    <input type="text" name="organisation" placeholder="{{ __('e.g. Tonhil hotel') }}"
+                           class="input @error('organisation') is-danger @enderror"
+                           value="{{ old('organisation') }}" required autocomplete="organisation" autofocus>
                     <span class="icon is-small is-left">
                     <i class="fas fa-hotel"></i>
                 </span>
-                    @error('lodging_name')
+                    @error('organisation')
                     <span class="icon is-small is-right">
                     <i class="fas fa-exclamation-triangle"></i>
                 </span>
                     @enderror
                 </div>
-                @error('lodging_name')
+                @error('organisation')
                 <p class="help is-danger">{{ $message }}</p>
                 @enderror
             </div>
@@ -63,22 +63,22 @@
                 @enderror
             </div>
             <div class="field">
-                <label for="lodging_max"
+                <label for="max_capacity"
                        class="label">{{ __('Maximum number of guests for your establishment') }}</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input type="text" name="lodging_max" placeholder="{{ __('e.g. 123') }}"
-                           class="input @error('lodging_max') is-danger @enderror"
-                           value="{{ old('lodging_max') }}" required autocomplete="lodging_max" autofocus>
+                    <input type="text" name="max_capacity" placeholder="{{ __('e.g. 123') }}"
+                           class="input @error('max_capacity') is-danger @enderror"
+                           value="{{ old('max_capacity') }}" required autocomplete="max_capacity" autofocus>
                     <span class="icon is-small is-left">
                     <i class="fas fa-bed"></i>
                 </span>
-                    @error('lodging_max')
+                    @error('max_capacity')
                     <span class="icon is-small is-right">
                     <i class="fas fa-exclamation-triangle"></i>
                 </span>
                     @enderror
                 </div>
-                @error('lodging_max')
+                @error('max_capacity')
                 <p class="help is-danger">{{ $message }}</p>
                 @enderror
             </div>

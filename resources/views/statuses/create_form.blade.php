@@ -11,6 +11,7 @@
                 @csrf
                 {{-- Here are all the form fields --}}
                 <div class="field">
+                
                     <label for="measured_at" class="label">{{ __('app.date') }}</label>
                     <div class="control has-icons-left has-icons-right">
                         <input type="date" name="measured_at" placeholder=""
@@ -32,8 +33,9 @@
                     @enderror
                 </div>
 
+                                
                 <div class="field">
-                    <label for="count" class="label">{{ __('app.statuses.count') }}</label>
+                    <label for="count" class="label">{{ Auth::user()->max_allowed }}</label>
                     <div class="control has-icons-left has-icons-right">
                         <input type="count" name="count" placeholder="{{ __('app.statuses.count_placeholder') }}"
                                class="input @error('count') is-danger @enderror"
