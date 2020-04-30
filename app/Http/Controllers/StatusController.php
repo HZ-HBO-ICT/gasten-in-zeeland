@@ -47,9 +47,22 @@ class StatusController extends Controller
      */
     public function store(CreateStatusRequest $request)
     {
-        Auth::user()->statuses()->create($request->validated());
+        $user = Auth::user();
+        $item = $user->statuses()->create($request->validated());
 
-        return redirect('home')->with('success', __('app.statuses.create.success'));
+        $count = $request->count;
+
+        $status = 'success';
+        $message = __('app.statuses.create.success');
+
+        if ($request->count > $user->max_allowed) {
+            $item->is_overcrowded = true;
+            $item->save();
+            $status = 'danger';
+            $message .= '. '.__('There are too many guests in your establishment');
+        }
+
+        return redirect('home')->with($status, $message);
     }
 
     /**

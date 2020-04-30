@@ -20,6 +20,7 @@ class CreateStatusesTable extends Migration
 
             $table->date('measured_at');
             $table->integer('count');
+            $table->boolean('is_overcrowded')->default(false);
             $table->timestamps();
         });
     }

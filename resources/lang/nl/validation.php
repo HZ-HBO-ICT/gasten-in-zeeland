@@ -185,7 +185,9 @@ return [
         'year'                  => 'jaar',
         'measured_at'           => 'datum',
         'count'                 => 'aantal gasten',
-        'lodging_max'           => 'maximaal aantal gasten',
+        'max_capacity'          => 'maximaal aantal gasten',
+        'organization'          => 'organisatie',
+        'accommodation'          => 'accomodatie',
         'kvk_number'            => 'KVK nummer',
     ],
 ];

@@ -16,7 +16,7 @@ return [
     'statuses.count'=> 'Aantal gasten',
     'statuses.count_placeholder'=> 'Huidig aantal gasten binnen uw verblijf',
     'statuses.create.success'=> 'Status update is opgeslagen',
-
+    'max_allowed_capacity' => env("MAX_ALLOWED_CAPACITY", '15'),
     'form.save' => "Opslaan",
     'form.reset' => 'Reset',
     'form.cancel' => 'Annuleren',

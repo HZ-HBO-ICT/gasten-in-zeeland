@@ -59,8 +59,9 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'kvk_number'=>['required','integer','digits:8'],
-            'lodging_name' => ['required', 'string', 'max:255'],
-            'lodging_max' => ['required', 'integer', 'min:0'],
+            'organisation' => ['required', 'string', 'max:255'],
+            'accommodation'=>['nullable', 'string','max:255'],
+            'max_capacity' => ['required', 'integer', 'min:0'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -78,20 +79,21 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'kvk_number' => $data['kvk_number'],
-            'lodging_name' => $data['lodging_name'],
-            'lodging_max' => $data['lodging_max'],
+            'organisation' => $data['organisation'],
+            'accommodation' => $data['accommodation'],
+            'max_capacity' => $data['max_capacity'],
             'password' => Hash::make($data['password']),
         ]);
         session()->flash('success', __('auth.register.email_sent'));
     }
-   
+
 
     public function store(Request $request){
 
-    
-        User::create($request->all());
-        
 
-    } 
-    
+        User::create($request->all());
+
+
+    }
+
 }
