@@ -60,6 +60,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'kvk_number'=>['required','integer','digits:8'],
             'lodging_name' => ['required', 'string', 'max:255'],
+            'accomodation'=>['string','max:255'],
             'lodging_max' => ['required', 'integer', 'min:0'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -79,6 +80,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'kvk_number' => $data['kvk_number'],
             'lodging_name' => $data['lodging_name'],
+            'accomodation' => $data['accomodation'],
             'lodging_max' => $data['lodging_max'],
             'password' => Hash::make($data['password']),
         ]);

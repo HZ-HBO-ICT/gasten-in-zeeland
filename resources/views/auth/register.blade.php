@@ -25,7 +25,7 @@
                 @enderror
             </div>
             <div class="field">
-                <label for="lodging_name" class="label">{{ __('Name of your establishment') }}</label>
+                <label for="lodging_name" class="label">{{ __('Naam van uw onderneming') }}</label>
                 <div class="control has-icons-left has-icons-right">
                     <input type="text" name="lodging_name" placeholder="{{ __('e.g. Tonhil hotel') }}"
                            class="input @error('lodging_name') is-danger @enderror"
@@ -40,6 +40,25 @@
                     @enderror
                 </div>
                 @error('lodging_name')
+                <p class="help is-danger">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="field">
+                <label for="accomodation" class="label">{{ __('Accomodatie (indien van toepassing)') }}</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input type="text" name="accomodation" placeholder="{{ __('e.g. hotel') }}"
+                           class="input @error('accomodation') is-danger @enderror"
+                           value="{{ old('accomodation') }}" required autocomplete="accomodation" autofocus>
+                    <span class="icon is-small is-left">
+                    <i class="fas fa-hotel"></i>
+                </span>
+                    @error('accomodation')
+                    <span class="icon is-small is-right">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </span>
+                    @enderror
+                </div>
+                @error('accomodation')
                 <p class="help is-danger">{{ $message }}</p>
                 @enderror
             </div>
