@@ -16,14 +16,14 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->text('name');
+            $table->string('email')->unique();
+            $table->integer('max_capacity');
             $table->boolean('isAdmin')->default(false);
             $table->text('organisation');
             $table->text('accommodation')->nullable();
-            $table->integer('max_capacity');
-            $table->string('email')->unique();
+            $table->text('kvk_number');
             $table->timestamp('email_verified_at')->nullable();
             $table->text('password');
-            $table->text('kvk_number');
             $table->rememberToken();
             $table->timestamps();
         });
