@@ -12,6 +12,14 @@
                 {{ csrf_field() }}
             </form>
         </div>
+        @if($user->isAdmin)
+        <div class="navbar-dropdown">
+             <a class="navbar-item" href="/admin">{{__('Admin')}}</a>
+            <form id="frm-admin" action="{{ route('admin') }}" method="GET" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+        </div>
+        @endif
     </div>
 </div>
 @else
