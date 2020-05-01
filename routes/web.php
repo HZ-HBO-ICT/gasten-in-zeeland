@@ -32,3 +32,5 @@ Route::get('auth/register','Auth\RegisterController@index')->name('register');
 Route::get('auth/register','Auth\RegisterController@create');
 Route::post('auth/register', 'Auth\RegisterController@store');
 Route::get('/admin','AdminController@index')->name('admin');
+Route::get('/overview ','UpdateController@edit')->name('overview');
+Route::patch('/overview', 'UpdateController@update')->name('update');
