@@ -12,7 +12,7 @@
                 {{ csrf_field() }}
             </form>
         </div>
-        <div class="navbar-dropdown">
+        <div class="navbar-dropdown-2">
              <a class="navbar-item" href="/overview">{{__('Overzicht')}}</a>
             <form id="frm-overview" action="{{ route('overview') }}" method="GET" style="display: none;">
                 {{ csrf_field() }}

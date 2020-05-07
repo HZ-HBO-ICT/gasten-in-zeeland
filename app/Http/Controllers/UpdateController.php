@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
+use Hash;
 
 class UpdateController extends Controller
 {
@@ -20,17 +21,18 @@ class UpdateController extends Controller
     public function update(){
 
         
-        
-         $user->name = request('name');
-         $user->email = request('email');
-         $user->max_capacity = request('max_capacity');
-         $user->organisation = request('organisation');
-         $user->accommodation = request('accommodation');
-         $user->kvk_number = request('kvk_number');
-         $user->password = request('password');
+        $user=Auth::user();
 
-         $user->save();
-         return redirect('home');
+        $user->name = request('name');
+        $user->email = request('email');
+        $user->max_capacity = request('max_capacity');
+        $user->organisation = request('organisation');
+        $user->accommodation = request('accommodation');
+        $user->kvk_number = request('kvk_number');
+        $user->password = Hash::make(request('password'));
+
+        $user->save();
+        return redirect('home');
         
     }
 }

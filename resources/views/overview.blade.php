@@ -11,7 +11,7 @@
             <div class="field">
                 <label for="name" class="label">{{ __('Name') }}</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input type="name" name="name" placeholder="{{ __('e.g. John Doe') }}"
+                    <input type="name" name="name" placeholder="{{ $user->name }}"
                            class="input @error('name') is-danger @enderror"
                            value="{{ $user->name }}" required autocomplete="name" autofocus>
                     <span class="icon is-small is-left">
@@ -30,7 +30,7 @@
             <div class="field">
                 <label for="organisation" class="label">{{ __('Naam van uw onderneming') }}</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input type="text" name="organisation" placeholder="{{ __('e.g. Tonhil hotel') }}"
+                    <input type="text" name="organisation" placeholder="{{ $user->organisation }}"
                            class="input @error('organisation') is-danger @enderror"
                            value="{{ $user->organisation }}" required autocomplete="organisation" autofocus>
                     <span class="icon is-small is-left">
@@ -49,7 +49,7 @@
             <div class="field">
                 <label for="accommodation" class="label">{{ __('Accomodatie (indien van toepassing)') }}</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input type="text" name="accommodation" placeholder="{{ __('e.g. hotel') }}"
+                    <input type="text" name="accommodation" placeholder="{{ $user->accommodation }}"
                            class="input @error('accommodation') is-danger @enderror"
                            value="{{ $user->accommodation }}" autocomplete="accommodation" autofocus>
                     <span class="icon is-small is-left">
@@ -69,7 +69,7 @@
                 <label for="max_capacity"
                        class="label">{{ __('Maximum number of guests for your establishment') }}</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input type="text" name="max_capacity" placeholder="{{ __('e.g. 123') }}"
+                    <input type="text" name="max_capacity" placeholder="{{ $user->max_capacity }}"
                            class="input @error('max_capacity') is-danger @enderror"
                            value="{{ $user->max_capacity }}" required autocomplete="max_capacity" autofocus>
                     <span class="icon is-small is-left">
@@ -88,7 +88,7 @@
             <div class="field">
                 <label for="email" class="label">{{ __('E-Mail Address') }}</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input type="email" name="email" placeholder="{{ __('e.g. bobsmith@gmail.com') }}"
+                    <input type="email" name="email" placeholder="{{ $user->email }}"
                            class="input @error('email') is-danger @enderror"
                            value="{{ $user->email }}" required autocomplete="email" autofocus>
                     <span class="icon is-small is-left">
@@ -107,7 +107,7 @@
             <div class="field">
                 <label for="kvk_number" class="label">{{ __('KVK-nummer') }}</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input type="integer" name="kvk_number" placeholder="{{ __('e.g. 34568732') }}"
+                    <input type="integer" name="kvk_number" placeholder="{{ $user->kvk_number }}"
                            class="input @error('kvk_number') is-danger @enderror"
                            value="{{ $user->kvk_number }}" required autocomplete="kvk_number" autofocus>
                     <span class="icon is-small is-left">
