@@ -84,7 +84,7 @@ class RegisterController extends Controller
             'max_capacity' => $data['max_capacity'],
             'password' => Hash::make($data['password']),
         ]);
-        session()->flash('success', __('auth.register.email_sent'));
+        session()->flash('success');
     }
 
 

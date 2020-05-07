@@ -32,6 +32,7 @@ class UpdateController extends Controller
         $user->password = Hash::make(request('password'));
 
         $user->save();
+         session()->flash('success', "Je gegevens zijn aangepast.");
         return redirect('home');
         
     }

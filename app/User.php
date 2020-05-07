@@ -7,11 +7,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use betterapp\LaravelDbEncrypter\Traits\EncryptableDbAttribute;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
     use EncryptableDbAttribute;
+    use LogsActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -29,6 +31,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'organisation',
         'accommodation',
     ];
+    
+    protected static $logAttributes = ['name', 'max_capacity'];
 
     /**
      * The attributes that should be hidden for arrays.

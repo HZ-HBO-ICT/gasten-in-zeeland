@@ -124,7 +124,7 @@
                 @enderror
             </div>
             <div class="field">
-                <label for="password" class="label">{{ __('Password') }}</label>
+                <label for="password" class="label">{{ __('New Password') }}</label>
                 <div class="control has-icons-left has-icons-right">
                     <input type="password" name="password"
                            class="input @error('password') is-danger @enderror"
@@ -143,7 +143,7 @@
                 @enderror
             </div>
             <div class="field">
-                <label for="password_confirmation" class="label">{{ __('Confirm Password') }}</label>
+                <label for="password_confirmation" class="label">{{ __('Confirm New Password') }}</label>
                 <div class="control has-icons-left has-icons-right">
                     <input type="password" name="password_confirmation"
                            class="input @error('password_confirmation') is-danger @enderror"
