@@ -23,7 +23,7 @@
                             <th>#</th>
                             <th>{{ __('app.username') }}</th>
                             <th>{{ __('app.organisation') }}</th>
-                            <th>{{ __('app.accomodation') }}</th>
+                            <th>{{ __('app.accommodation') }}</th>
                             <th>{{ __('app.kvk_number') }}</th>
                             <th>{{ __('app.max_capacity') }}</th>
                             <th>{{ __('app.status_count') }}</th>
@@ -34,7 +34,7 @@
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->organisation }}</td>
-                                    <td>{{ $user->accomodation }}</td>
+                                    <td>{{ $user->accommodation }}</td>
                                     <td>{{ $user->kvk_number }}</td>
                                     <td>{{ $user->max_capacity }}</td>
                                     <td>{{ $user->statuses->count() }}</td>

@@ -23,7 +23,7 @@ return [
 
     'username' => 'Naam',
     'organisation' => 'Organisatie',
-    'accomodation' => 'Accomodatie',
+    'accommodation' => 'Accomodatie',
     'kvk_number' => 'KvK-nummer',
     'max_capacity' => 'Capaciteit',
     'status_count' => 'Registraties',
