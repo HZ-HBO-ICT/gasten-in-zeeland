@@ -64,5 +64,6 @@
     "This action is unauthorized.": "Deze actie is niet toegestaan.",
     "Guest count": "Aantal gasten",
     "Currently, there is a maximum of :max_count guests (:max_percentage%) allowed": "Op dit moment zijn maximaal :max_count gasten (:max_percentage%) toegestaan",
-    "There are too many guests in your establishment": "Er zijn te veel gasten in uw accomodatie aanwezig"
+    "There are too many guests in your establishment": "Er zijn te veel gasten in uw accomodatie aanwezig",
+    "No registrations to download": "Er zijn geen registraties om te downloaden"
 }

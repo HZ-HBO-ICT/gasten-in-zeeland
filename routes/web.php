@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\IsAdmin;
 use App\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -20,15 +21,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Routes for Registration, email verification and authentication
 Auth::routes(['verify' => true]);
 
-// Resource routes of the base pages. For more info on Resource Routes
-Route::resource('/statuses', 'StatusController')->middleware('verified');
+Route::resource('/statuses', 'StatusController')
+    ->middleware('verified');
 
+Route::get('/home', 'HomeController@index')->name('home')
+    ->middleware('verified');
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
-//Route::get('auth/login','Auth\LoginController@index')->name('login');
-Route::get('auth/register','Auth\RegisterController@index')->name('register');
-Route::get('auth/register','Auth\RegisterController@create');
-Route::post('auth/register', 'Auth\RegisterController@store');
-Route::get('/admin','AdminController@index')->name('admin');
+Route::middleware(IsAdmin::class)->prefix('admin')->group(function (){
+
+    Route::get('/','AdminController@index')->name('admin');
+    Route::get('/statuses', 'AdminController@downloadStatusCsV')
+        ->name('admin.statuses');
+    Route::get('/verified_users','AdminController@verifiedUsers')
+        ->name('admin.verified_users');
+    Route::get('/unverified_users','AdminController@unverifiedUsers')
+        ->name('admin.unverified_users');
+    Route::delete('/unverified_users', 'AdminController@deleteUnverifiedUsers')
+        ->name('admin.unverified_users.delete');
+
+});
+
