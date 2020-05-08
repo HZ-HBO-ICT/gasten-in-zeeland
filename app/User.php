@@ -4,6 +4,7 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use betterapp\LaravelDbEncrypter\Traits\EncryptableDbAttribute;
 use Illuminate\Notifications\Notifiable;
@@ -92,5 +93,26 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
 
+    /**
+     * Scope a query to only include verified users.
+     *
+     * @param  Builder  $query
+     * @return Builder
+     */
+    public function scopeVerified($query)
+    {
+        return $query->whereNotNull('email_verified_at');
+    }
+
+    /**
+     * Scope a query to only include unverified users.
+     *
+     * @param  Builder  $query
+     * @return Builder
+     */
+    public function scopeUnverified($query)
+    {
+        return $query->whereNull('email_verified_at');
+    }
 
 }

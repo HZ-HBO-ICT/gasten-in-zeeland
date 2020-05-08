@@ -21,6 +21,14 @@ return [
     'form.reset' => 'Reset',
     'form.cancel' => 'Annuleren',
 
+    'username' => 'Naam',
+    'organisation' => 'Organisatie',
+    'accommodation' => 'Accomodatie',
+    'kvk_number' => 'KvK-nummer',
+    'max_capacity' => 'Capaciteit',
+    'status_count' => 'Registraties',
+    'created_at' => 'Aangemaakt op',
+
     'date' => 'Datum',
 
     'login' => 'Inloggen',
