@@ -22,15 +22,16 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-// Resource routes of the base pages. For more info on Resource Routes
-Route::resource('/statuses', 'StatusController')->middleware('verified');
 
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
-//Route::get('auth/login','Auth\LoginController@index')->name('login');
-Route::get('auth/register','Auth\RegisterController@index')->name('register');
-Route::get('auth/register','Auth\RegisterController@create');
-Route::post('auth/register', 'Auth\RegisterController@store');
-Route::get('/admin','AdminController@index')->name('admin');
-Route::get('/overview ','UpdateController@edit')->name('overview');
-Route::patch('/overview', 'UpdateController@update')->name('update');
+Route::middleware('verified')->group(function() {
+    Route::resource('/statuses', 'StatusController');
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/admin','AdminController@index')->name('admin');
+
+    Route::get('/overview ','UpdateController@edit')->name('overview');
+    Route::patch('/overview', 'UpdateController@update')->name('update');
+
+});

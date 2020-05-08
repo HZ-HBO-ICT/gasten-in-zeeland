@@ -21,7 +21,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name','kvk_number' ,'organisation','accommodation' ,'max_capacity', 'email', 'password',
+        'name', 'kvk_number', 'organisation', 'accommodation' , 'max_capacity', 'email', 'password',
     ];
 
     protected $encryptable = [
@@ -31,8 +31,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'organisation',
         'accommodation',
     ];
-    
-    protected static $logAttributes = ['name', 'max_capacity'];
+
+    protected static $logAttributes = [
+        'name', 'kvk_number', 'organisation', 'accommodation' , 'max_capacity'
+    ];
 
     /**
      * The attributes that should be hidden for arrays.

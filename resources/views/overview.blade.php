@@ -1,11 +1,16 @@
 @extends('common.page')
 
 @section('content')
-<div class="column is-offset-3-desktop is-6-desktop is-12-tablet">
-   
-    <form method="POST" action="{{ route('update') }}" class="box">
-    
-            
+    <section class="hero  is-medium  is-bold is-primary">
+        <div class="hero-body" style="
+            background: url('/img/20200430_133650.png') no-repeat center bottom;
+            background-size: cover;"
+        ></div>
+    </section>
+
+    <div class="column is-offset-3-desktop is-6-desktop is-12-tablet">
+        <div class="title">{{ __('Update your account profile') }}</div>
+        <form method="POST" action="{{ route('update') }}" class="box">
             @csrf
             {{method_field('PATCH')}}
             <div class="field">
@@ -86,25 +91,6 @@
                 @enderror
             </div>
             <div class="field">
-                <label for="email" class="label">{{ __('E-Mail Address') }}</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input type="email" name="email" placeholder="{{ $user->email }}"
-                           class="input @error('email') is-danger @enderror"
-                           value="{{ $user->email }}" required autocomplete="email" autofocus>
-                    <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                </span>
-                    @error('email')
-                    <span class="icon is-small is-right">
-                    <i class="fas fa-exclamation-triangle"></i>
-                </span>
-                    @enderror
-                </div>
-                @error('email')
-                <p class="help is-danger">{{ $message }}</p>
-                @enderror
-            </div>
-            <div class="field">
                 <label for="kvk_number" class="label">{{ __('KVK-nummer') }}</label>
                 <div class="control has-icons-left has-icons-right">
                     <input type="integer" name="kvk_number" placeholder="{{ $user->kvk_number }}"
@@ -123,56 +109,17 @@
                 <p class="help is-danger">{{ $message }}</p>
                 @enderror
             </div>
-            <div class="field">
-                <label for="password" class="label">{{ __('New Password') }}</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input type="password" name="password"
-                           class="input @error('password') is-danger @enderror"
-                           value="{{ $user->password }}" required autocomplete="password" autofocus>
-                    <span class="icon is-small is-left">
-                    <i class="fas fa-key"></i>
-                </span>
-                    @error('password')
-                    <span class="icon is-small is-right">
-                    <i class="fas fa-exclamation-triangle"></i>
-                </span>
-                    @enderror
-                </div>
-                @error('password')
-                <p class="help is-danger">{{ $message }}</p>
-                @enderror
-            </div>
-            <div class="field">
-                <label for="password_confirmation" class="label">{{ __('Confirm New Password') }}</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input type="password" name="password_confirmation"
-                           class="input @error('password_confirmation') is-danger @enderror"
-                           value="{{ $user->password }}" required autocomplete="password_confirmation">
-                    <span class="icon is-small is-left">
-                    <i class="fas fa-key"></i>
-                </span>
-                    @error('password_confirmation')
-                    <span class="icon is-small is-right">
-                    <i class="fas fa-exclamation-triangle"></i>
-                </span>
-                    @enderror
-                </div>
-                @error('password_confirmation')
-                <p class="help is-danger">{{ $message }}</p>
-                @enderror
-            </div>
             <div class="field is-grouped">
                 {{-- Here are the form buttons: save, reset and cancel --}}
                 <div class="control">
                     <button type="submit" class="button is-primary">{{ __('Update') }}</button>
                 </div>
                 <div class="control">
+                    <button type="reset" class="button is-warning">{{ __('Reset') }}</button>
+                </div>
+                <div class="control">
                     <a type="button" href="/" class="button is-light">{{ __('Cancel') }}</a>
                 </div>
             </div>
-            
         </form>
-   
-   
-
 @endsection
