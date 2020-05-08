@@ -58,7 +58,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'kvk_number'=>['required','integer','digits:8'],
+            'kvk_number'=>['required','string','digits:8'],
             'organisation' => ['required', 'string', 'max:255'],
             'accommodation'=>['nullable', 'string','max:255'],
             'max_capacity' => ['required', 'integer', 'min:0'],
