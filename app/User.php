@@ -7,11 +7,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use betterapp\LaravelDbEncrypter\Traits\EncryptableDbAttribute;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
     use EncryptableDbAttribute;
+    use LogsActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +21,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name','kvk_number' ,'organisation','accommodation' ,'max_capacity', 'email', 'password',
+        'name', 'kvk_number', 'organisation', 'accommodation' , 'max_capacity', 'email', 'password',
     ];
 
     protected $encryptable = [
@@ -28,6 +30,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'organisation',
         'accommodation',
+    ];
+
+    protected static $logAttributes = [
+        'name', 'kvk_number', 'organisation', 'accommodation' , 'max_capacity'
     ];
 
     /**
