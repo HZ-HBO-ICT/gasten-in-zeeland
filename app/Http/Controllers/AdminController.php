@@ -6,10 +6,9 @@ use App\User;
 use App\Status;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
-use Illuminate\Http\Client\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
@@ -71,7 +70,7 @@ class AdminController extends Controller
     /**
      * Returns a CSV stream of all statusdata
      *
-     * @return StreamedResponse
+     * @return Application|StreamedResponse|RedirectResponse|Redirector
      */
     public function downloadStatusCsV()
     {
@@ -128,13 +127,5 @@ class AdminController extends Controller
 
         return $result;
     }
-
-    private function emptyFile()
-    {
-        return response()->streamDownload(function () {
-            echo "";
-        });
-    }
-
 
 }
