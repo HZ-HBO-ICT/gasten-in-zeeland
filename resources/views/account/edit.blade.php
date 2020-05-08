@@ -10,7 +10,7 @@
 
     <div class="column is-offset-3-desktop is-6-desktop is-12-tablet">
         <div class="title">{{ __('Update your account profile') }}</div>
-        <form method="POST" action="{{ route('update') }}" class="box">
+        <form method="POST" action="{{ route('account.update') }}" class="box">
             @csrf
             {{method_field('PATCH')}}
             <div class="field">

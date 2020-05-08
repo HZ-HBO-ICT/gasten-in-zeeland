@@ -23,7 +23,6 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 
-
 Route::middleware('verified')->group(function() {
     Route::resource('/statuses', 'StatusController');
 
@@ -31,7 +30,7 @@ Route::middleware('verified')->group(function() {
 
     Route::get('/admin','AdminController@index')->name('admin');
 
-    Route::get('/overview ','UpdateController@edit')->name('overview');
-    Route::patch('/overview', 'UpdateController@update')->name('update');
+    Route::get('/profile','AccountController@edit')->name('account.edit');
+    Route::patch('/profile', 'AccountController@update')->name('account.update');
 
 });

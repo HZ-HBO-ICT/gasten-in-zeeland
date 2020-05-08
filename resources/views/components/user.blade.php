@@ -10,7 +10,7 @@
                         <span>{{__('Admin')}}</span>
                     </a>
                 @endif
-                <a class="navbar-item" href="/overview">
+                <a class="navbar-item" href="{{route('account.edit')}}">
                     <span class="icon"><i class="fas fa-user-cog"></i></span>
                     <span>{{__('Profile')}}</span>
                 </a>

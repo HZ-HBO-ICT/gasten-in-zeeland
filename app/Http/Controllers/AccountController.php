@@ -5,21 +5,30 @@ use Illuminate\Http\Request;
 use DB;
 use Auth;
 use Hash;
+use Illuminate\Http\Response;
 
-class UpdateController extends Controller
+class AccountController extends Controller
 {
-    public function index()
-    {
-        return view('user');
-    }
 
+    /**
+     * Show the form for editing the authenticated user.
+     *
+     * @return Response
+     */
     public function edit()
     {
         $user=Auth::user();
 
-        return view('overview', compact('user'));
+        return view('account.edit', compact('user'));
     }
 
+
+    /**
+     * Update the authenticated user in storage.
+     *
+     * @param Request $request
+     * @return Response
+     */
     public function update(Request $request)
     {
         $validated = $request->validate([
