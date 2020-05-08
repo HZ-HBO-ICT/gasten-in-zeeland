@@ -27,6 +27,7 @@ return [
     'kvk_number' => 'KvK-nummer',
     'max_capacity' => 'Capaciteit',
     'status_count' => 'Registraties',
+    'created_at' => 'Aangemaakt op',
 
     'date' => 'Datum',
 

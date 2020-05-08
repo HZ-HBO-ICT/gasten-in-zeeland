@@ -23,23 +23,23 @@
                         <table class="table is-striped is-fullwidth">
                             <thead>
                             <th>#</th>
+                            <th>{{ __('app.created_at') }}</th>
                             <th>{{ __('app.username') }}</th>
                             <th>{{ __('app.organisation') }}</th>
                             <th>{{ __('app.accomodation') }}</th>
                             <th>{{ __('app.kvk_number') }}</th>
                             <th>{{ __('app.max_capacity') }}</th>
-                            <th>{{ __('app.status_count') }}</th>
                             </thead>
                             <tbody>
                             @foreach($unverified_users as $user)
                                 <tr>
                                     <td><input type="checkbox" name="ids[]" value="{{ $user->id }}"></td>
+                                    <td>{{ $user->created_at }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->organisation }}</td>
                                     <td>{{ $user->accomodation }}</td>
                                     <td>{{ $user->kvk_number }}</td>
                                     <td>{{ $user->max_capacity }}</td>
-                                    <td>{{ $user->statuses->count() }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
