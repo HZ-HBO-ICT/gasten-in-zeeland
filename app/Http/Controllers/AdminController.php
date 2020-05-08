@@ -93,7 +93,7 @@ class AdminController extends Controller
 
         return response()->streamDownload(function () use (&$list) {
             echo $this->arrayToCsv($list);
-        }, 'test.csv');
+        }, 'statuses.csv');
     }
 
     private function arrayToCsv(array $fields, $delimiter = ',', $enclosure = '"',
