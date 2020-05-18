@@ -148,4 +148,11 @@ class AdminController extends Controller
         return $result;
     }
 
+    public function rapportGenerator()
+    {
+        return view('admin.rapport_generator', [
+            'unverified_users' => User::unverified()->paginate(15),
+        ]);
+    }
+
 }
