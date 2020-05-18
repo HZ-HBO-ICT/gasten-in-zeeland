@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\CsvService;
+use App\Services\ReportService;
 use App\User;
 use App\Status;
 use Illuminate\Contracts\Foundation\Application;
@@ -70,9 +72,10 @@ class AdminController extends Controller
     /**
      * Returns a CSV stream of all statusdata
      *
+     * @param CsvService $csvService
      * @return Application|StreamedResponse|RedirectResponse|Redirector
      */
-    public function downloadStatusCsV()
+    public function downloadStatusCsV(CsvService $csvService)
     {
         $headers = [
             'Cache-Control' => 'must-revalidate, post-check=0, pre-check=0'
@@ -88,38 +91,7 @@ class AdminController extends Controller
             return redirect('admin')->with('warning', __('No registrations to download'));
         }
 
-        # add headers for each column in the CSV download
-        array_unshift($list, array_keys($list[0]));
-
-        return response()->streamDownload(function () use (&$list) {
-            echo $this->arrayToCsv($list);
-        }, 'statuses.csv');
-    }
-
-    private function arrayToCsv(array $fields, $delimiter = ',', $enclosure = '"',
-                                $encloseAll = false, $nullToMysqlNull = false)
-    {
-        $delimiter_esc = preg_quote($delimiter, '/');
-        $enclosure_esc = preg_quote($enclosure, '/');
-
-        $outputString = "";
-        foreach ($fields as $tempFields) {
-            $output = array();
-            foreach ($tempFields as $field) {
-                if ($field === null && $nullToMysqlNull) {
-                    $output[] = 'NULL';
-                    continue;
-                }
-
-                // Enclose fields containing $delimiter, $enclosure or whitespace
-                if ($encloseAll || preg_match("/(?:${delimiter_esc}|${enclosure_esc}|\s)/", $field)) {
-                    $field = $enclosure . str_replace($enclosure, $enclosure . $enclosure, $field) . $enclosure;
-                }
-                $output[] = $field . " ";
-            }
-            $outputString .= implode($delimiter, $output) . "\r\n";
-        }
-        return $outputString;
+        return $csvService->streamDownload($list, 'statuses.csv');
     }
 
     /*
@@ -148,11 +120,27 @@ class AdminController extends Controller
         return $result;
     }
 
-    public function rapportGenerator()
+    public function rapportGenerator(ReportService $service)
     {
         return view('admin.rapport_generator', [
-            'unverified_users' => User::unverified()->paginate(15),
+            'report_data' => $service->getReportData(),
         ]);
+    }
+
+    public function downloadReportCSV(ReportService $reportService, CsvService $csvService)
+    {
+        $header = [
+            __('app.measured_at'),
+            __('app.number_of_registrations'),
+            __('app.daily_capacity'),
+            __('app.daily_max_capacity'),
+            __('app.percentage_capacity'),
+            __('app.number_of_overcrowded_registrations')
+        ];
+
+        $list = $reportService->getReportData();
+
+        return $csvService->streamDownload($list, 'daily_report.csv', $header);
     }
 
 }

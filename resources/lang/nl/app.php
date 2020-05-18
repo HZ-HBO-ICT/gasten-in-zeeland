@@ -28,6 +28,12 @@ return [
     'max_capacity' => 'Capaciteit',
     'status_count' => 'Registraties',
     'created_at' => 'Aangemaakt op',
+    'measured_at' => 'Datum registraties',
+    'number_of_registrations' => 'Aantal registraties',
+    'daily_capacity' => 'Aantal gasten',
+    'daily_max_capacity' => 'Max. capaciteit',
+    'percentage_capacity' => 'Bezettingspercentage',
+    'number_of_overcrowded_registrations' => 'Aantal bedrijven met overbezetting',
 
     'date' => 'Datum',
 
