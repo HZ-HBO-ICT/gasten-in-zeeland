@@ -50,5 +50,9 @@ Route::middleware(IsAdmin::class)->prefix('admin')->group(function ()
         ->name('admin.unverified_users');
     Route::delete('/unverified_users', 'AdminController@deleteUnverifiedUsers')
         ->name('admin.unverified_users.delete');
+    Route::get('/verified_rapport_generator','AdminController@showDailyReport')
+        ->name('admin.daily_report');
+    Route::get('/download_daily_report', 'AdminController@downloadReportCSV')
+        ->name('admin.download_daily_report');
 
 });
