@@ -29,6 +29,16 @@ class CsvService
         }, $filename);
     }
 
+    /**
+     * Converts an array to a Csv-string that can be saved to a file or streamed as a response.
+     *
+     * @param array $fields
+     * @param string $delimiter
+     * @param string $enclosure
+     * @param bool $encloseAll
+     * @param bool $nullToMysqlNull
+     * @return string
+     */
     private function arrayToCsv(array $fields, $delimiter = ',', $enclosure = '"',
                                 $encloseAll = false, $nullToMysqlNull = false)
     {
