@@ -120,7 +120,7 @@ class AdminController extends Controller
         return $result;
     }
 
-    public function rapportGenerator(ReportService $service)
+    public function showDailyReport(ReportService $service)
     {
         return view('admin.rapport_generator', [
             'report_data' => $service->getReportData(),

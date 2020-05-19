@@ -81,7 +81,7 @@
                                     </div>
                                     <nav class="level is-mobile">
                                         <div class="level-right">
-                                            <a class="level-item" href="{{ route('admin.rapport_generator') }}">Rapport bekijken</a>
+                                            <a class="level-item" href="{{ route('admin.daily_report') }}">Rapport bekijken</a>
                                         </div>
                                     </nav>
                                 </div>
