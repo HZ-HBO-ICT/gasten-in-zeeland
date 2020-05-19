@@ -15,7 +15,7 @@
                 <div class="column is-offset-2-desktop is-8-desktop is-12-tablet">
 
                     <div class="">
-                        <h1 class="title">Dagrapportage</h1>
+                        <h1 class="title">Dagelijks rapport</h1>
                         @include('common.notifications')
                         <table class="table is-striped is-fullwidth">
                             <thead>
@@ -40,11 +40,8 @@
                             @endforeach
                             </tbody>
                         </table>
-                        <div class="field is-grouped">
-                            <div class="control">
-                                <a href="{{route('admin.download_daily_report')}}" class="button is-primay">{{ __('Download') }}</a>
-                            </div>
-                        </div>
+                        <a href="{{route('admin.download_daily_report')}}"
+                           class="button is-primary">{{ __('Download') }}</a>
                     </div>
                 </div>
 

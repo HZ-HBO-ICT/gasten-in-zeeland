@@ -20,6 +20,24 @@
                         <div class="box">
                             <div class="media">
                                 <div class="media-left">
+                                    <i class="fas fa-newspaper fa-4x"></i>
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        Dagelijks rapport
+                                    </div>
+                                    <nav class="level is-mobile">
+                                        <div class="level-right">
+                                            <a class="level-item" href="{{ route('admin.daily_report') }}">Bekijk de rapportage</a>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="media">
+                                <div class="media-left">
                                     <i class="fas fa-table fa-4x"></i>
                                 </div>
                                 <div class="media-content">
@@ -65,23 +83,6 @@
                                     <nav class="level is-mobile">
                                         <div class="level-right">
                                             <a class="level-item" href="{{ route('admin.unverified_users') }}">Verwijder</a>
-                                        </div>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="media">
-                                <div class="media-left">
-                                    <i class="fas fa-table fa-4x"></i>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                        Rapport maken
-                                    </div>
-                                    <nav class="level is-mobile">
-                                        <div class="level-right">
-                                            <a class="level-item" href="{{ route('admin.daily_report') }}">Rapport bekijken</a>
                                         </div>
                                     </nav>
                                 </div>
