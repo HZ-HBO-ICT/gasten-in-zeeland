@@ -18,8 +18,14 @@ class ReportService
     {
         return DB::select("
             SELECT S.measured_at, COUNT(S.id) AS number_of_registrations,
-                SUM(S.count) AS daily_capacity, SUM(U.max_capacity) AS daily_max_capacity,
-                100*SUM(S.count)/SUM(U.max_capacity) AS percentage_capacity,
+                SUM(S.count) AS daily_capacity, (
+                    SELECT SUM(max_capacity) FROM `users` WHERE email_verified_at IS NOT NULL
+                    AND isAdmin !=1
+                ) AS daily_max_capacity,
+                100*SUM(S.count)/ (
+                    SELECT SUM(max_capacity) FROM `users` WHERE email_verified_at IS NOT NULL
+                    AND isAdmin !=1
+                ) AS percentage_capacity,
                 SUM(S.is_overcrowded=1) AS number_of_overcrowded_registrations
             FROM `statuses` AS S
             INNER JOIN `users` AS U ON U.id=S.user_id
