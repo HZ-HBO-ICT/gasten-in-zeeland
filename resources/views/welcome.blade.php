@@ -15,20 +15,14 @@
         <h1 class="title">
             Gasten in Zeeland
         </h1>
-        <p>
-            Beste ondernemer,
-        </p>
-        <p>
+        <div class="notification is-danger">
+            Beste ondernemer,<br/>
             Vanaf heden is registratie niet meer nodig! De gegevens van het registratiesysteem worden binnen drie weken
-            (vanaf 17-6) verwijderd.
-            Hartelijk dank voor uw medewerking.
-
-        </p>
-        <p>
+            (vanaf 17-6) verwijderd.<br/>
+            Hartelijk dank voor uw medewerking.<br/>
             Veiligheidsregio<br/>
             Kenniscentrum Kusttoerisme<br/>
             HZ University of Applied Sciences, Lectoraat Data Science<br/>
-        </p>
-        <hr/>
+        </div>
     </div>
 @endsection
