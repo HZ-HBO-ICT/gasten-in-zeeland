@@ -11,23 +11,24 @@
 @endsection
 
 @section('content')
-    <div class="column is-6-tablet is-5-desktop is-4-widescreen has-text-centered">
-    <h1 class="title">
-        Gasten in Zeeland
-    </h1>
-    <p>
-        Stapsgewijze openstelling van recreatiebedrijven zoals de Veiligheidsregio heeft
-        aangekondigd is alleen mogelijk op voorwaarde dat overnachtingen geregistreerd worden.
-        Op deze manier kan het aantal mensen in Zeeland gemonitord worden in relatie tot de
-        zorgcapaciteit. We vragen u om de registratie dagelijks volledig in te vullen.
-    </p>
-    <p>
-        De gegevens worden beheerd door het Kenniscentrum Kusttoerisme en kunnen alleen
-        geanonimiseerd door de Veiligheidsregio ingezien worden. Om privacy redenen worden de
-        gegevens na drie weken vernietigd.
-    </p>
-    <a class="button is-success" href="{{ route('register')}}">
-        {{ __('Register') }}
-    </a>
+    <div class="column is-8-tablet is-7-desktop is-6-widescreen">
+        <h1 class="title">
+            Gasten in Zeeland
+        </h1>
+        <p>
+            Beste ondernemer,
+        </p>
+        <p>
+            Vanaf heden is registratie niet meer nodig! De gegevens van het registratiesysteem worden binnen drie weken
+            (vanaf 17-6) verwijderd.
+            Hartelijk dank voor uw medewerking.
+
+        </p>
+        <p>
+            Veiligheidsregio<br/>
+            Kenniscentrum Kusttoerisme<br/>
+            HZ University of Applied Sciences, Lectoraat Data Science<br/>
+        </p>
+        <hr/>
     </div>
 @endsection
