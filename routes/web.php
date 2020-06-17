@@ -28,7 +28,6 @@ Auth::routes(['verify' => true]);
 // All routes that should only be visible to verified users go here
 Route::middleware('verified')->group(function()
 {
-    Route::resource('/statuses', 'StatusController');
 
     Route::get('/home', 'HomeController@index')->name('home');
 
